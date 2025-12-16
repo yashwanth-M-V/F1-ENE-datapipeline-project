@@ -1,0 +1,3152 @@
+2025-12-15 23:36:34,120 - INFO - Created FastF1 cache directory at ./fastf1_cache
+2025-12-15 23:36:34,162 - INFO - FastF1 cache enabled
+2025-12-15 23:36:34,163 - INFO - Fetching event schedule for season 2024
+2025-12-15 23:36:34,934 - INFO - Starting ingestion | Season=2024, Round=0, Session=R
+2025-12-15 23:36:34,965 - ERROR - FAILED | Season=2024, Round=0, Session=R | Error=Cannot get testing event by round number!
+Traceback (most recent call last):
+  File "C:\Deadpool\Github_files\F1-ENE-datapipeline-project\ingestion\fastf1_ingestion.py", line 37, in ingest_session
+    session = fastf1.get_session(season, round_no, session_type)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Deadpool\Github_files\F1-ENE-datapipeline-project\f1-dp-ml\Lib\site-packages\fastf1\events.py", line 122, in get_session
+    event = get_event(year, gp, force_ergast=force_ergast, backend=backend)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Deadpool\Github_files\F1-ENE-datapipeline-project\f1-dp-ml\Lib\site-packages\fastf1\events.py", line 225, in get_event
+    event = schedule.get_event_by_round(gp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Deadpool\Github_files\F1-ENE-datapipeline-project\f1-dp-ml\Lib\site-packages\fastf1\events.py", line 715, in get_event_by_round
+    raise ValueError("Cannot get testing event by round number!")
+ValueError: Cannot get testing event by round number!
+2025-12-15 23:36:34,969 - INFO - Max events limit reached, stopping early
+2025-12-15 23:39:30,468 - INFO - FastF1 cache enabled
+2025-12-15 23:39:30,468 - INFO - Fetching event schedule for season 2024
+2025-12-15 23:39:30,499 - INFO - Skipping testing event (round 0)
+2025-12-15 23:39:30,500 - INFO - Starting ingestion | Season=2024, Round=1, Session=R
+2025-12-15 23:39:30,542 - INFO - Loading data for Bahrain Grand Prix - Race [v3.7.0]
+2025-12-15 23:39:30,547 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:39:30,549 - INFO - Fetching session info data...
+2025-12-15 23:39:31,336 - INFO - Data has been written to cache!
+2025-12-15 23:39:31,337 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:39:31,337 - INFO - Fetching driver list...
+2025-12-15 23:39:31,901 - INFO - Data has been written to cache!
+2025-12-15 23:39:32,425 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:39:32,426 - INFO - Fetching session status data...
+2025-12-15 23:39:32,968 - INFO - Data has been written to cache!
+2025-12-15 23:39:32,968 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:39:32,968 - INFO - Fetching lap count data...
+2025-12-15 23:39:33,500 - INFO - Data has been written to cache!
+2025-12-15 23:39:33,500 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:39:33,500 - INFO - Fetching track status data...
+2025-12-15 23:39:34,017 - INFO - Data has been written to cache!
+2025-12-15 23:39:34,034 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:39:34,035 - INFO - Fetching timing data...
+2025-12-15 23:39:35,886 - INFO - Parsing timing data...
+2025-12-15 23:39:37,909 - INFO - Data has been written to cache!
+2025-12-15 23:39:37,909 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:39:37,909 - INFO - Fetching timing app data...
+2025-12-15 23:39:38,504 - INFO - Data has been written to cache!
+2025-12-15 23:39:38,504 - INFO - Processing timing data...
+2025-12-15 23:39:39,965 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:39:39,966 - INFO - Fetching car data...
+2025-12-15 23:39:41,451 - INFO - Parsing car data...
+2025-12-15 23:39:47,862 - INFO - Data has been written to cache!
+2025-12-15 23:39:47,864 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:39:47,864 - INFO - Fetching position data...
+2025-12-15 23:39:49,052 - INFO - Parsing position data...
+2025-12-15 23:39:54,532 - INFO - Data has been written to cache!
+2025-12-15 23:39:56,566 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:39:56,567 - INFO - Fetching weather data...
+2025-12-15 23:39:57,156 - INFO - Data has been written to cache!
+2025-12-15 23:39:57,158 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:39:57,159 - INFO - Fetching race control messages...
+2025-12-15 23:39:57,711 - INFO - Data has been written to cache!
+2025-12-15 23:39:57,829 - INFO - Finished loading data for 20 drivers: ['1', '11', '55', '16', '63', '4', '44', '81', '14', '18', '24', '20', '3', '22', '23', '27', '31', '10', '77', '2']
+2025-12-15 23:39:58,549 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D1/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '113696'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '5e0906e5-da0f-11f0-b14e-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:39:59,189 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:39:59 GMT'
+    'ETag': '"0x8DE3C3342D9DF28"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '57e1c283-801e-0031-7f1c-6ebe1e000000'
+    'x-ms-client-request-id': '5e0906e5-da0f-11f0-b14e-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:39:58 GMT'
+2025-12-15 23:39:59,194 - INFO - LAPS ingested | rows=1129
+2025-12-15 23:39:59,210 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D1/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '10181'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '5e6da8ac-da0f-11f0-9f44-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:39:59,850 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:40:00 GMT'
+    'ETag': '"0x8DE3C3343401920"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '7ad8c0e6-701e-0035-4c1c-6e3319000000'
+    'x-ms-client-request-id': '5e6da8ac-da0f-11f0-9f44-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:39:59 GMT'
+2025-12-15 23:39:59,855 - INFO - WEATHER ingested | rows=157
+2025-12-15 23:39:59,877 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D1/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18429'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '5ed38d0e-da0f-11f0-a537-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:40:00,489 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:40:00 GMT'
+    'ETag': '"0x8DE3C3343A29B78"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'b7665cf1-f01e-0014-291c-6e1762000000'
+    'x-ms-client-request-id': '5ed38d0e-da0f-11f0-a537-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:39:59 GMT'
+2025-12-15 23:40:00,495 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:40:00,495 - INFO - SUCCESS | Season=2024, Round=1, Session=R
+2025-12-15 23:40:00,495 - INFO - Starting ingestion | Season=2024, Round=2, Session=R
+2025-12-15 23:40:00,500 - INFO - Loading data for Saudi Arabian Grand Prix - Race [v3.7.0]
+2025-12-15 23:40:00,516 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:40:00,516 - INFO - Fetching session info data...
+2025-12-15 23:40:01,066 - INFO - Data has been written to cache!
+2025-12-15 23:40:01,067 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:40:01,067 - INFO - Fetching driver list...
+2025-12-15 23:40:01,608 - INFO - Data has been written to cache!
+2025-12-15 23:40:01,690 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:40:01,691 - INFO - Fetching session status data...
+2025-12-15 23:40:02,374 - INFO - Data has been written to cache!
+2025-12-15 23:40:02,375 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:40:02,376 - INFO - Fetching lap count data...
+2025-12-15 23:40:03,017 - INFO - Data has been written to cache!
+2025-12-15 23:40:03,019 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:40:03,020 - INFO - Fetching track status data...
+2025-12-15 23:40:03,565 - INFO - Data has been written to cache!
+2025-12-15 23:40:03,567 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:40:03,567 - INFO - Fetching timing data...
+2025-12-15 23:40:05,262 - INFO - Parsing timing data...
+2025-12-15 23:40:06,694 - WARNING - Failed to align laps for drivers: ['10']
+2025-12-15 23:40:06,808 - INFO - Data has been written to cache!
+2025-12-15 23:40:06,809 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:40:06,809 - INFO - Fetching timing app data...
+2025-12-15 23:40:07,416 - INFO - Data has been written to cache!
+2025-12-15 23:40:07,417 - INFO - Processing timing data...
+2025-12-15 23:40:08,449 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:40:08,449 - INFO - Fetching car data...
+2025-12-15 23:40:09,674 - INFO - Parsing car data...
+2025-12-15 23:40:13,904 - WARNING - Driver 55: Car data is incomplete!
+2025-12-15 23:40:13,958 - WARNING - Driver 38: Car data is incomplete!
+2025-12-15 23:40:14,104 - INFO - Data has been written to cache!
+2025-12-15 23:40:14,104 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:40:14,104 - INFO - Fetching position data...
+2025-12-15 23:40:15,150 - INFO - Parsing position data...
+2025-12-15 23:40:19,501 - WARNING - Driver 55: Position data is incomplete!
+2025-12-15 23:40:19,524 - WARNING - Driver 38: Position data is incomplete!
+2025-12-15 23:40:19,546 - WARNING - Driver 241: Position data is incomplete!
+2025-12-15 23:40:19,597 - WARNING - Driver 242: Position data is incomplete!
+2025-12-15 23:40:19,637 - WARNING - Driver 243: Position data is incomplete!
+2025-12-15 23:40:20,228 - INFO - Data has been written to cache!
+2025-12-15 23:40:22,377 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:40:22,377 - INFO - Fetching weather data...
+2025-12-15 23:40:22,907 - INFO - Data has been written to cache!
+2025-12-15 23:40:22,909 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:40:22,909 - INFO - Fetching race control messages...
+2025-12-15 23:40:23,393 - INFO - Data has been written to cache!
+2025-12-15 23:40:23,522 - INFO - Finished loading data for 20 drivers: ['1', '11', '16', '81', '14', '63', '38', '4', '44', '27', '23', '20', '31', '2', '22', '3', '77', '24', '18', '10']
+2025-12-15 23:40:23,539 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D2/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '97607'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '6cee18e8-da0f-11f0-aba8-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:40:24,106 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:40:24 GMT'
+    'ETag': '"0x8DE3C3351B56F68"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'e81669c1-f01e-003b-751c-6e1aa9000000'
+    'x-ms-client-request-id': '6cee18e8-da0f-11f0-aba8-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:40:24 GMT'
+2025-12-15 23:40:24,108 - INFO - LAPS ingested | rows=901
+2025-12-15 23:40:24,114 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D2/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '10101'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '6d45d706-da0f-11f0-a167-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:40:24,677 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:40:25 GMT'
+    'ETag': '"0x8DE3C33520C9610"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '1c22a75a-201e-0017-3e1c-6ef606000000'
+    'x-ms-client-request-id': '6d45d706-da0f-11f0-a167-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:40:24 GMT'
+2025-12-15 23:40:24,680 - INFO - WEATHER ingested | rows=146
+2025-12-15 23:40:24,696 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D2/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18121'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '6d9ea27f-da0f-11f0-8fc8-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:40:25,291 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:40:25 GMT'
+    'ETag': '"0x8DE3C33526A39EC"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'a07a6662-d01e-004e-0e1c-6e7185000000'
+    'x-ms-client-request-id': '6d9ea27f-da0f-11f0-8fc8-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:40:24 GMT'
+2025-12-15 23:40:25,293 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:40:25,293 - INFO - SUCCESS | Season=2024, Round=2, Session=R
+2025-12-15 23:40:25,294 - INFO - Starting ingestion | Season=2024, Round=3, Session=R
+2025-12-15 23:40:25,314 - INFO - Loading data for Australian Grand Prix - Race [v3.7.0]
+2025-12-15 23:40:25,319 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:40:25,320 - INFO - Fetching session info data...
+2025-12-15 23:40:25,850 - INFO - Data has been written to cache!
+2025-12-15 23:40:25,851 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:40:25,851 - INFO - Fetching driver list...
+2025-12-15 23:40:26,371 - INFO - Data has been written to cache!
+2025-12-15 23:40:26,411 - DEBUG - Failed to parse timestamp '-1:57:37.891' in Ergastresponse.
+2025-12-15 23:40:26,454 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:40:26,455 - INFO - Fetching session status data...
+2025-12-15 23:40:27,125 - INFO - Data has been written to cache!
+2025-12-15 23:40:27,127 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:40:27,127 - INFO - Fetching lap count data...
+2025-12-15 23:40:27,717 - INFO - Data has been written to cache!
+2025-12-15 23:40:27,718 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:40:27,718 - INFO - Fetching track status data...
+2025-12-15 23:40:28,308 - INFO - Data has been written to cache!
+2025-12-15 23:40:28,310 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:40:28,310 - INFO - Fetching timing data...
+2025-12-15 23:40:30,034 - INFO - Parsing timing data...
+2025-12-15 23:40:31,432 - INFO - Data has been written to cache!
+2025-12-15 23:40:31,432 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:40:31,432 - INFO - Fetching timing app data...
+2025-12-15 23:40:32,041 - INFO - Data has been written to cache!
+2025-12-15 23:40:32,041 - INFO - Processing timing data...
+2025-12-15 23:40:33,277 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:40:33,278 - INFO - Fetching car data...
+2025-12-15 23:40:34,523 - INFO - Parsing car data...
+2025-12-15 23:40:39,251 - INFO - Data has been written to cache!
+2025-12-15 23:40:39,252 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:40:39,252 - INFO - Fetching position data...
+2025-12-15 23:40:40,550 - INFO - Parsing position data...
+2025-12-15 23:40:45,131 - INFO - Data has been written to cache!
+2025-12-15 23:40:47,682 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:40:47,689 - INFO - Fetching weather data...
+2025-12-15 23:40:48,342 - INFO - Data has been written to cache!
+2025-12-15 23:40:48,344 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:40:48,344 - INFO - Fetching race control messages...
+2025-12-15 23:40:49,046 - INFO - Data has been written to cache!
+2025-12-15 23:40:49,183 - INFO - Finished loading data for 19 drivers: ['55', '16', '4', '81', '11', '18', '22', '14', '27', '20', '23', '3', '10', '77', '24', '31', '63', '44', '1']
+2025-12-15 23:40:49,211 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D3/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '105371'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '7c3b3c84-da0f-11f0-80b1-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:40:49,814 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:40:50 GMT'
+    'ETag': '"0x8DE3C3361086B00"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '489058af-e01e-008e-121c-6e89bb000000'
+    'x-ms-client-request-id': '7c3b3c84-da0f-11f0-80b1-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:40:49 GMT'
+2025-12-15 23:40:49,814 - INFO - LAPS ingested | rows=998
+2025-12-15 23:40:49,828 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D3/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '10196'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '7c996e6b-da0f-11f0-b8b8-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:40:50,387 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:40:50 GMT'
+    'ETag': '"0x8DE3C336160202C"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'eb1a194b-501e-0050-311c-6e9d5d000000'
+    'x-ms-client-request-id': '7c996e6b-da0f-11f0-b8b8-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:40:50 GMT'
+2025-12-15 23:40:50,400 - INFO - WEATHER ingested | rows=144
+2025-12-15 23:40:50,425 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D3/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18286'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '7cf47540-da0f-11f0-b6e1-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:40:50,985 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:40:51 GMT'
+    'ETag': '"0x8DE3C3361BB9868"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '7b4334c3-001e-0000-5d1c-6e5f0d000000'
+    'x-ms-client-request-id': '7cf47540-da0f-11f0-b6e1-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:40:51 GMT'
+2025-12-15 23:40:50,985 - INFO - RESULTS ingested | rows=19
+2025-12-15 23:40:50,985 - INFO - SUCCESS | Season=2024, Round=3, Session=R
+2025-12-15 23:40:50,985 - INFO - Starting ingestion | Season=2024, Round=4, Session=R
+2025-12-15 23:40:51,027 - INFO - Loading data for Japanese Grand Prix - Race [v3.7.0]
+2025-12-15 23:40:51,096 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:40:51,096 - INFO - Fetching session info data...
+2025-12-15 23:40:51,681 - INFO - Data has been written to cache!
+2025-12-15 23:40:51,681 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:40:51,681 - INFO - Fetching driver list...
+2025-12-15 23:40:52,352 - INFO - Data has been written to cache!
+2025-12-15 23:40:52,456 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:40:52,457 - INFO - Fetching session status data...
+2025-12-15 23:40:53,249 - INFO - Data has been written to cache!
+2025-12-15 23:40:53,249 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:40:53,249 - INFO - Fetching lap count data...
+2025-12-15 23:40:53,867 - INFO - Data has been written to cache!
+2025-12-15 23:40:53,868 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:40:53,868 - INFO - Fetching track status data...
+2025-12-15 23:40:54,503 - INFO - Data has been written to cache!
+2025-12-15 23:40:54,512 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:40:54,513 - INFO - Fetching timing data...
+2025-12-15 23:40:56,352 - INFO - Parsing timing data...
+2025-12-15 23:40:58,122 - INFO - Data has been written to cache!
+2025-12-15 23:40:58,123 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:40:58,123 - INFO - Fetching timing app data...
+2025-12-15 23:40:58,724 - INFO - Data has been written to cache!
+2025-12-15 23:40:58,725 - INFO - Processing timing data...
+2025-12-15 23:40:59,841 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:40:59,841 - INFO - Fetching car data...
+2025-12-15 23:41:01,176 - INFO - Parsing car data...
+2025-12-15 23:41:06,927 - INFO - Data has been written to cache!
+2025-12-15 23:41:06,928 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:41:06,929 - INFO - Fetching position data...
+2025-12-15 23:41:08,193 - INFO - Parsing position data...
+2025-12-15 23:41:14,187 - INFO - Data has been written to cache!
+2025-12-15 23:41:16,531 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:41:16,532 - INFO - Fetching weather data...
+2025-12-15 23:41:17,125 - INFO - Data has been written to cache!
+2025-12-15 23:41:17,128 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:41:17,128 - INFO - Fetching race control messages...
+2025-12-15 23:41:17,658 - INFO - Data has been written to cache!
+2025-12-15 23:41:17,741 - INFO - Finished loading data for 20 drivers: ['1', '11', '55', '16', '4', '14', '63', '81', '44', '22', '27', '18', '20', '77', '31', '10', '2', '24', '3', '23']
+2025-12-15 23:41:17,756 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D4/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '98141'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '8d3f0820-da0f-11f0-ac40-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:41:18,314 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:41:18 GMT'
+    'ETag': '"0x8DE3C337204DC6C"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'faee3ba9-501e-008b-641c-6e5b60000000'
+    'x-ms-client-request-id': '8d3f0820-da0f-11f0-ac40-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:41:18 GMT'
+2025-12-15 23:41:18,315 - INFO - LAPS ingested | rows=907
+2025-12-15 23:41:18,320 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D4/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '10824'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '8d9506e9-da0f-11f0-a490-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:41:18,864 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:41:19 GMT'
+    'ETag': '"0x8DE3C3372598368"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'ac8dfd77-f01e-0066-061c-6e102d000000'
+    'x-ms-client-request-id': '8d9506e9-da0f-11f0-a490-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:41:18 GMT'
+2025-12-15 23:41:18,864 - INFO - WEATHER ingested | rows=181
+2025-12-15 23:41:18,880 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D4/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18417'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '8dea6e92-da0f-11f0-9ab4-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:41:19,439 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:41:19 GMT'
+    'ETag': '"0x8DE3C3372AF2C88"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '1bea4a16-501e-0032-381c-6e5f7a000000'
+    'x-ms-client-request-id': '8dea6e92-da0f-11f0-9ab4-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:41:19 GMT'
+2025-12-15 23:41:19,441 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:41:19,441 - INFO - SUCCESS | Season=2024, Round=4, Session=R
+2025-12-15 23:41:19,441 - INFO - Starting ingestion | Season=2024, Round=5, Session=R
+2025-12-15 23:41:19,459 - INFO - Loading data for Chinese Grand Prix - Race [v3.7.0]
+2025-12-15 23:41:19,461 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:41:19,461 - INFO - Fetching session info data...
+2025-12-15 23:41:19,978 - INFO - Data has been written to cache!
+2025-12-15 23:41:19,978 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:41:19,978 - INFO - Fetching driver list...
+2025-12-15 23:41:20,533 - INFO - Data has been written to cache!
+2025-12-15 23:41:20,607 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:41:20,607 - INFO - Fetching session status data...
+2025-12-15 23:41:21,282 - INFO - Data has been written to cache!
+2025-12-15 23:41:21,282 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:41:21,282 - INFO - Fetching lap count data...
+2025-12-15 23:41:21,811 - INFO - Data has been written to cache!
+2025-12-15 23:41:21,811 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:41:21,811 - INFO - Fetching track status data...
+2025-12-15 23:41:22,311 - INFO - Data has been written to cache!
+2025-12-15 23:41:22,311 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:41:22,311 - INFO - Fetching timing data...
+2025-12-15 23:41:23,960 - INFO - Parsing timing data...
+2025-12-15 23:41:25,536 - INFO - Data has been written to cache!
+2025-12-15 23:41:25,537 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:41:25,538 - INFO - Fetching timing app data...
+2025-12-15 23:41:26,161 - INFO - Data has been written to cache!
+2025-12-15 23:41:26,161 - INFO - Processing timing data...
+2025-12-15 23:41:27,229 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:41:27,230 - INFO - Fetching car data...
+2025-12-15 23:41:28,686 - INFO - Parsing car data...
+2025-12-15 23:41:33,516 - INFO - Data has been written to cache!
+2025-12-15 23:41:33,518 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:41:33,518 - INFO - Fetching position data...
+2025-12-15 23:41:34,814 - INFO - Parsing position data...
+2025-12-15 23:41:39,597 - WARNING - Driver 241: Position data is incomplete!
+2025-12-15 23:41:39,614 - WARNING - Driver 242: Position data is incomplete!
+2025-12-15 23:41:39,633 - WARNING - Driver 243: Position data is incomplete!
+2025-12-15 23:41:40,180 - INFO - Data has been written to cache!
+2025-12-15 23:41:42,386 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:41:42,387 - INFO - Fetching weather data...
+2025-12-15 23:41:42,985 - INFO - Data has been written to cache!
+2025-12-15 23:41:42,988 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:41:42,988 - INFO - Fetching race control messages...
+2025-12-15 23:41:43,563 - INFO - Data has been written to cache!
+2025-12-15 23:41:43,571 - WARNING - Driver 1 completed the race distance 00:08.313000 before the recorded end of the session.
+2025-12-15 23:41:43,731 - INFO - Finished loading data for 20 drivers: ['1', '4', '11', '16', '55', '63', '14', '81', '44', '27', '31', '23', '10', '24', '18', '20', '2', '3', '22', '77']
+2025-12-15 23:41:43,751 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D5/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '110949'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '9cbd8c33-da0f-11f0-a1b9-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:41:44,343 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:41:44 GMT'
+    'ETag': '"0x8DE3C3381890144"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'a4b90ff4-501e-00a4-2a1c-6e56ab000000'
+    'x-ms-client-request-id': '9cbd8c33-da0f-11f0-a1b9-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:41:44 GMT'
+2025-12-15 23:41:44,347 - INFO - LAPS ingested | rows=1032
+2025-12-15 23:41:44,347 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D5/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '10417'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '9d186695-da0f-11f0-bc36-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:41:44,928 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:41:45 GMT'
+    'ETag': '"0x8DE3C3381E22898"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '14e2ea6b-d01e-0085-151c-6e72d0000000'
+    'x-ms-client-request-id': '9d186695-da0f-11f0-bc36-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:41:44 GMT'
+2025-12-15 23:41:44,929 - INFO - WEATHER ingested | rows=165
+2025-12-15 23:41:44,937 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D5/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18412'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '9d726996-da0f-11f0-9337-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:41:45,476 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:41:45 GMT'
+    'ETag': '"0x8DE3C3382356CE8"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'fb648241-901e-003d-7b1c-6e2916000000'
+    'x-ms-client-request-id': '9d726996-da0f-11f0-9337-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:41:45 GMT'
+2025-12-15 23:41:45,479 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:41:45,480 - INFO - SUCCESS | Season=2024, Round=5, Session=R
+2025-12-15 23:41:45,481 - INFO - Starting ingestion | Season=2024, Round=6, Session=R
+2025-12-15 23:41:46,067 - INFO - Loading data for Miami Grand Prix - Race [v3.7.0]
+2025-12-15 23:41:46,068 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:41:46,069 - INFO - Fetching session info data...
+2025-12-15 23:41:46,591 - INFO - Data has been written to cache!
+2025-12-15 23:41:46,593 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:41:46,593 - INFO - Fetching driver list...
+2025-12-15 23:41:47,154 - INFO - Data has been written to cache!
+2025-12-15 23:41:47,230 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:41:47,231 - INFO - Fetching session status data...
+2025-12-15 23:41:47,942 - INFO - Data has been written to cache!
+2025-12-15 23:41:47,942 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:41:47,942 - INFO - Fetching lap count data...
+2025-12-15 23:41:48,505 - INFO - Data has been written to cache!
+2025-12-15 23:41:48,506 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:41:48,506 - INFO - Fetching track status data...
+2025-12-15 23:41:49,060 - INFO - Data has been written to cache!
+2025-12-15 23:41:49,063 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:41:49,063 - INFO - Fetching timing data...
+2025-12-15 23:41:50,754 - INFO - Parsing timing data...
+2025-12-15 23:41:52,543 - INFO - Data has been written to cache!
+2025-12-15 23:41:52,543 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:41:52,543 - INFO - Fetching timing app data...
+2025-12-15 23:41:53,119 - INFO - Data has been written to cache!
+2025-12-15 23:41:53,119 - INFO - Processing timing data...
+2025-12-15 23:41:54,258 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:41:54,258 - INFO - Fetching car data...
+2025-12-15 23:41:55,593 - INFO - Parsing car data...
+2025-12-15 23:41:59,943 - INFO - Data has been written to cache!
+2025-12-15 23:41:59,943 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:41:59,943 - INFO - Fetching position data...
+2025-12-15 23:42:01,309 - INFO - Parsing position data...
+2025-12-15 23:42:05,640 - WARNING - Driver 241: Position data is incomplete!
+2025-12-15 23:42:05,652 - WARNING - Driver 242: Position data is incomplete!
+2025-12-15 23:42:05,675 - WARNING - Driver 243: Position data is incomplete!
+2025-12-15 23:42:06,209 - INFO - Data has been written to cache!
+2025-12-15 23:42:08,392 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:42:08,394 - INFO - Fetching weather data...
+2025-12-15 23:42:08,943 - INFO - Data has been written to cache!
+2025-12-15 23:42:08,945 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:42:08,945 - INFO - Fetching race control messages...
+2025-12-15 23:42:09,497 - INFO - Data has been written to cache!
+2025-12-15 23:42:09,608 - INFO - Finished loading data for 20 drivers: ['4', '1', '16', '11', '55', '44', '22', '63', '14', '31', '27', '10', '81', '24', '3', '77', '18', '23', '20', '2']
+2025-12-15 23:42:09,631 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D6/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '114202'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'ac2a7e03-da0f-11f0-9f28-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:42:10,207 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:42:10 GMT'
+    'ETag': '"0x8DE3C3390F32E20"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '8a1bcc4a-d01e-00aa-411c-6e7f1b000000'
+    'x-ms-client-request-id': 'ac2a7e03-da0f-11f0-9f28-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:42:10 GMT'
+2025-12-15 23:42:10,208 - INFO - LAPS ingested | rows=1111
+2025-12-15 23:42:10,208 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D6/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '10132'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'ac828486-da0f-11f0-88f4-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:42:10,756 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:42:11 GMT'
+    'ETag': '"0x8DE3C33914754E8"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '815d95b6-801e-0088-1d1c-6eba04000000'
+    'x-ms-client-request-id': 'ac828486-da0f-11f0-88f4-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:42:11 GMT'
+2025-12-15 23:42:10,758 - INFO - WEATHER ingested | rows=150
+2025-12-15 23:42:10,760 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D6/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18435'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'acd6c528-da0f-11f0-9db7-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:42:11,364 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:42:11 GMT'
+    'ETag': '"0x8DE3C3391A32378"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '6c0782a3-a01e-0044-431c-6ed532000000'
+    'x-ms-client-request-id': 'acd6c528-da0f-11f0-9db7-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:42:11 GMT'
+2025-12-15 23:42:11,365 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:42:11,365 - INFO - SUCCESS | Season=2024, Round=6, Session=R
+2025-12-15 23:42:11,366 - INFO - Starting ingestion | Season=2024, Round=7, Session=R
+2025-12-15 23:42:11,380 - INFO - Loading data for Emilia Romagna Grand Prix - Race [v3.7.0]
+2025-12-15 23:42:11,390 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:42:11,391 - INFO - Fetching session info data...
+2025-12-15 23:42:11,946 - INFO - Data has been written to cache!
+2025-12-15 23:42:11,947 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:42:11,948 - INFO - Fetching driver list...
+2025-12-15 23:42:12,503 - INFO - Data has been written to cache!
+2025-12-15 23:42:12,572 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:42:12,573 - INFO - Fetching session status data...
+2025-12-15 23:42:13,266 - INFO - Data has been written to cache!
+2025-12-15 23:42:13,268 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:42:13,268 - INFO - Fetching lap count data...
+2025-12-15 23:42:13,824 - INFO - Data has been written to cache!
+2025-12-15 23:42:13,825 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:42:13,826 - INFO - Fetching track status data...
+2025-12-15 23:42:14,375 - INFO - Data has been written to cache!
+2025-12-15 23:42:14,375 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:42:14,375 - INFO - Fetching timing data...
+2025-12-15 23:42:16,046 - INFO - Parsing timing data...
+2025-12-15 23:42:17,686 - INFO - Data has been written to cache!
+2025-12-15 23:42:17,687 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:42:17,687 - INFO - Fetching timing app data...
+2025-12-15 23:42:18,282 - INFO - Data has been written to cache!
+2025-12-15 23:42:18,283 - INFO - Processing timing data...
+2025-12-15 23:42:19,435 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:42:19,435 - INFO - Fetching car data...
+2025-12-15 23:42:20,679 - INFO - Parsing car data...
+2025-12-15 23:42:24,914 - INFO - Data has been written to cache!
+2025-12-15 23:42:24,915 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:42:24,915 - INFO - Fetching position data...
+2025-12-15 23:42:26,118 - INFO - Parsing position data...
+2025-12-15 23:42:30,593 - INFO - Data has been written to cache!
+2025-12-15 23:42:32,388 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:42:32,388 - INFO - Fetching weather data...
+2025-12-15 23:42:32,972 - INFO - Data has been written to cache!
+2025-12-15 23:42:32,975 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:42:32,975 - INFO - Fetching race control messages...
+2025-12-15 23:42:33,524 - INFO - Data has been written to cache!
+2025-12-15 23:42:33,615 - INFO - Finished loading data for 20 drivers: ['1', '4', '16', '81', '55', '44', '63', '11', '18', '22', '27', '20', '3', '31', '24', '10', '2', '77', '14', '23']
+2025-12-15 23:42:33,633 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D7/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '119297'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'ba78d90a-da0f-11f0-a6d0-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:42:34,230 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:42:34 GMT'
+    'ETag': '"0x8DE3C339F44D1F0"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'eb31b792-901e-0012-151c-6e24dd000000'
+    'x-ms-client-request-id': 'ba78d90a-da0f-11f0-a6d0-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:42:33 GMT'
+2025-12-15 23:42:34,232 - INFO - LAPS ingested | rows=1238
+2025-12-15 23:42:34,236 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D7/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '10263'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'bad4d599-da0f-11f0-869b-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:42:34,776 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:42:35 GMT'
+    'ETag': '"0x8DE3C339F980C44"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '48913c92-e01e-008e-3d1c-6e89bb000000'
+    'x-ms-client-request-id': 'bad4d599-da0f-11f0-869b-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:42:34 GMT'
+2025-12-15 23:42:34,780 - INFO - WEATHER ingested | rows=143
+2025-12-15 23:42:34,794 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D7/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18451'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'bb29fca7-da0f-11f0-971b-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:42:35,399 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:42:35 GMT'
+    'ETag': '"0x8DE3C339FF818D4"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'eb1b0da2-501e-0050-491c-6e9d5d000000'
+    'x-ms-client-request-id': 'bb29fca7-da0f-11f0-971b-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:42:35 GMT'
+2025-12-15 23:42:35,400 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:42:35,401 - INFO - SUCCESS | Season=2024, Round=7, Session=R
+2025-12-15 23:42:35,401 - INFO - Starting ingestion | Season=2024, Round=8, Session=R
+2025-12-15 23:42:35,414 - INFO - Loading data for Monaco Grand Prix - Race [v3.7.0]
+2025-12-15 23:42:35,421 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:42:35,424 - INFO - Fetching session info data...
+2025-12-15 23:42:35,967 - INFO - Data has been written to cache!
+2025-12-15 23:42:35,968 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:42:35,968 - INFO - Fetching driver list...
+2025-12-15 23:42:36,490 - INFO - Data has been written to cache!
+2025-12-15 23:42:36,563 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:42:36,564 - INFO - Fetching session status data...
+2025-12-15 23:42:37,275 - INFO - Data has been written to cache!
+2025-12-15 23:42:37,277 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:42:37,277 - INFO - Fetching lap count data...
+2025-12-15 23:42:37,857 - INFO - Data has been written to cache!
+2025-12-15 23:42:37,859 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:42:37,859 - INFO - Fetching track status data...
+2025-12-15 23:42:38,415 - INFO - Data has been written to cache!
+2025-12-15 23:42:38,417 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:42:38,417 - INFO - Fetching timing data...
+2025-12-15 23:42:40,043 - INFO - Parsing timing data...
+2025-12-15 23:42:41,709 - INFO - Data has been written to cache!
+2025-12-15 23:42:41,710 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:42:41,711 - INFO - Fetching timing app data...
+2025-12-15 23:42:42,273 - INFO - Data has been written to cache!
+2025-12-15 23:42:42,273 - INFO - Processing timing data...
+2025-12-15 23:42:43,507 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:42:43,507 - INFO - Fetching car data...
+2025-12-15 23:42:44,895 - INFO - Parsing car data...
+2025-12-15 23:42:50,961 - INFO - Data has been written to cache!
+2025-12-15 23:42:50,962 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:42:50,962 - INFO - Fetching position data...
+2025-12-15 23:42:52,222 - INFO - Parsing position data...
+2025-12-15 23:42:58,288 - WARNING - Driver 241: Position data is incomplete!
+2025-12-15 23:42:58,318 - WARNING - Driver 242: Position data is incomplete!
+2025-12-15 23:42:58,346 - WARNING - Driver 243: Position data is incomplete!
+2025-12-15 23:42:58,991 - INFO - Data has been written to cache!
+2025-12-15 23:43:01,755 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:43:01,756 - INFO - Fetching weather data...
+2025-12-15 23:43:02,330 - INFO - Data has been written to cache!
+2025-12-15 23:43:02,330 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:43:02,337 - INFO - Fetching race control messages...
+2025-12-15 23:43:02,855 - INFO - Data has been written to cache!
+2025-12-15 23:43:02,944 - INFO - Finished loading data for 20 drivers: ['16', '81', '55', '4', '63', '1', '44', '22', '23', '10', '14', '3', '77', '18', '2', '24', '31', '11', '27', '20']
+2025-12-15 23:43:02,961 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D8/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '123909'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'cbf3ca4e-da0f-11f0-a70d-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:43:03,555 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:43:03 GMT'
+    'ETag': '"0x8DE3C33B0C04D34"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'adbc1d8d-f01e-0004-481c-6ed20a000000'
+    'x-ms-client-request-id': 'cbf3ca4e-da0f-11f0-a70d-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:43:03 GMT'
+2025-12-15 23:43:03,555 - INFO - LAPS ingested | rows=1237
+2025-12-15 23:43:03,555 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D8/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '11171'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'cc4e9fc0-da0f-11f0-89e8-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:43:04,109 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:43:04 GMT'
+    'ETag': '"0x8DE3C33B113F094"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'f9635015-101e-000c-021c-6ec805000000'
+    'x-ms-client-request-id': 'cc4e9fc0-da0f-11f0-89e8-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:43:03 GMT'
+2025-12-15 23:43:04,112 - INFO - WEATHER ingested | rows=200
+2025-12-15 23:43:04,123 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D8/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18378'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'cca537b3-da0f-11f0-9fc3-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:43:04,671 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:43:05 GMT'
+    'ETag': '"0x8DE3C33B16B743C"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '98cb2f55-701e-0047-3d1c-6e3456000000'
+    'x-ms-client-request-id': 'cca537b3-da0f-11f0-9fc3-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:43:04 GMT'
+2025-12-15 23:43:04,671 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:43:04,671 - INFO - SUCCESS | Season=2024, Round=8, Session=R
+2025-12-15 23:43:04,671 - INFO - Starting ingestion | Season=2024, Round=9, Session=R
+2025-12-15 23:43:04,704 - INFO - Loading data for Canadian Grand Prix - Race [v3.7.0]
+2025-12-15 23:43:04,710 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:43:04,710 - INFO - Fetching session info data...
+2025-12-15 23:43:05,269 - INFO - Data has been written to cache!
+2025-12-15 23:43:05,270 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:43:05,270 - INFO - Fetching driver list...
+2025-12-15 23:43:05,796 - INFO - Data has been written to cache!
+2025-12-15 23:43:05,877 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:43:05,878 - INFO - Fetching session status data...
+2025-12-15 23:43:06,575 - INFO - Data has been written to cache!
+2025-12-15 23:43:06,577 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:43:06,577 - INFO - Fetching lap count data...
+2025-12-15 23:43:07,091 - INFO - Data has been written to cache!
+2025-12-15 23:43:07,091 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:43:07,092 - INFO - Fetching track status data...
+2025-12-15 23:43:07,606 - INFO - Data has been written to cache!
+2025-12-15 23:43:07,608 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:43:07,608 - INFO - Fetching timing data...
+2025-12-15 23:43:09,250 - INFO - Parsing timing data...
+2025-12-15 23:43:10,891 - INFO - Data has been written to cache!
+2025-12-15 23:43:10,892 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:43:10,892 - INFO - Fetching timing app data...
+2025-12-15 23:43:11,562 - INFO - Data has been written to cache!
+2025-12-15 23:43:11,562 - INFO - Processing timing data...
+2025-12-15 23:43:12,938 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:43:12,938 - INFO - Fetching car data...
+2025-12-15 23:43:14,203 - INFO - Parsing car data...
+2025-12-15 23:43:17,514 - INFO - Data has been written to cache!
+2025-12-15 23:43:17,514 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:43:17,515 - INFO - Fetching position data...
+2025-12-15 23:43:18,618 - INFO - Parsing position data...
+2025-12-15 23:43:21,861 - WARNING - Driver 241: Position data is incomplete!
+2025-12-15 23:43:21,875 - WARNING - Driver 242: Position data is incomplete!
+2025-12-15 23:43:21,888 - WARNING - Driver 243: Position data is incomplete!
+2025-12-15 23:43:22,235 - INFO - Data has been written to cache!
+2025-12-15 23:43:23,629 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:43:23,630 - INFO - Fetching weather data...
+2025-12-15 23:43:24,189 - INFO - Data has been written to cache!
+2025-12-15 23:43:24,191 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:43:24,191 - INFO - Fetching race control messages...
+2025-12-15 23:43:24,740 - INFO - Data has been written to cache!
+2025-12-15 23:43:25,009 - INFO - Finished loading data for 20 drivers: ['1', '4', '63', '44', '81', '14', '18', '3', '10', '31', '27', '20', '77', '22', '24', '55', '23', '11', '16', '2']
+2025-12-15 23:43:25,025 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D9/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '137082'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'd91a7b66-da0f-11f0-842e-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:43:25,564 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:43:25 GMT'
+    'ETag': '"0x8DE3C33BDDDD604"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'f729c4a7-801e-0053-2a1c-6e7c39000000'
+    'x-ms-client-request-id': 'd91a7b66-da0f-11f0-842e-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:43:25 GMT'
+2025-12-15 23:43:25,566 - INFO - LAPS ingested | rows=1272
+2025-12-15 23:43:25,569 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D9/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '9859'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'd96dba3c-da0f-11f0-a1bf-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:43:26,186 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:43:26 GMT'
+    'ETag': '"0x8DE3C33BE3C8B74"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'eaac53ff-c01e-001f-791c-6eec09000000'
+    'x-ms-client-request-id': 'd96dba3c-da0f-11f0-a1bf-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:43:25 GMT'
+2025-12-15 23:43:26,189 - INFO - WEATHER ingested | rows=113
+2025-12-15 23:43:26,199 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D9/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18398'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'd9cda55b-da0f-11f0-b012-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:43:26,749 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:43:27 GMT'
+    'ETag': '"0x8DE3C33BE92767C"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'e1d6ffb5-f01e-0076-761c-6ed545000000'
+    'x-ms-client-request-id': 'd9cda55b-da0f-11f0-b012-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:43:26 GMT'
+2025-12-15 23:43:26,751 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:43:26,751 - INFO - SUCCESS | Season=2024, Round=9, Session=R
+2025-12-15 23:43:26,752 - INFO - Starting ingestion | Season=2024, Round=10, Session=R
+2025-12-15 23:43:26,767 - INFO - Loading data for Spanish Grand Prix - Race [v3.7.0]
+2025-12-15 23:43:26,769 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:43:26,769 - INFO - Fetching session info data...
+2025-12-15 23:43:27,321 - INFO - Data has been written to cache!
+2025-12-15 23:43:27,322 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:43:27,322 - INFO - Fetching driver list...
+2025-12-15 23:43:27,872 - INFO - Data has been written to cache!
+2025-12-15 23:43:27,944 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:43:27,947 - INFO - Fetching session status data...
+2025-12-15 23:43:28,631 - INFO - Data has been written to cache!
+2025-12-15 23:43:28,635 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:43:28,635 - INFO - Fetching lap count data...
+2025-12-15 23:43:29,199 - INFO - Data has been written to cache!
+2025-12-15 23:43:29,200 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:43:29,200 - INFO - Fetching track status data...
+2025-12-15 23:43:29,707 - INFO - Data has been written to cache!
+2025-12-15 23:43:29,707 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:43:29,707 - INFO - Fetching timing data...
+2025-12-15 23:43:31,382 - INFO - Parsing timing data...
+2025-12-15 23:43:33,422 - INFO - Data has been written to cache!
+2025-12-15 23:43:33,424 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:43:33,424 - INFO - Fetching timing app data...
+2025-12-15 23:43:34,061 - INFO - Data has been written to cache!
+2025-12-15 23:43:34,061 - INFO - Processing timing data...
+2025-12-15 23:43:35,352 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:43:35,352 - INFO - Fetching car data...
+2025-12-15 23:43:36,635 - INFO - Parsing car data...
+2025-12-15 23:43:41,029 - INFO - Data has been written to cache!
+2025-12-15 23:43:41,029 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:43:41,029 - INFO - Fetching position data...
+2025-12-15 23:43:42,221 - INFO - Parsing position data...
+2025-12-15 23:43:47,127 - INFO - Data has been written to cache!
+2025-12-15 23:43:49,009 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:43:49,010 - INFO - Fetching weather data...
+2025-12-15 23:43:49,556 - INFO - Data has been written to cache!
+2025-12-15 23:43:49,557 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:43:49,558 - INFO - Fetching race control messages...
+2025-12-15 23:43:50,084 - INFO - Data has been written to cache!
+2025-12-15 23:43:50,093 - WARNING - Driver 1 completed the race distance 00:00.015000 before the recorded end of the session.
+2025-12-15 23:43:50,225 - INFO - Finished loading data for 20 drivers: ['1', '4', '44', '63', '16', '55', '81', '11', '10', '31', '27', '14', '24', '18', '3', '77', '20', '23', '22', '2']
+2025-12-15 23:43:50,239 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D10/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '128717'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'e82212a1-da0f-11f0-8566-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:43:50,834 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:43:51 GMT'
+    'ETag': '"0x8DE3C33CCEDDEDC"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '230ffbcc-401e-005c-3a1c-6e0a55000000'
+    'x-ms-client-request-id': 'e82212a1-da0f-11f0-8566-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:43:50 GMT'
+2025-12-15 23:43:50,835 - INFO - LAPS ingested | rows=1310
+2025-12-15 23:43:50,839 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D10/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '10374'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'e87da813-da0f-11f0-a2af-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:43:51,485 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:43:51 GMT'
+    'ETag': '"0x8DE3C33CD52844C"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'f729eec9-801e-0053-5b1c-6e7c39000000'
+    'x-ms-client-request-id': 'e87da813-da0f-11f0-a2af-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:43:51 GMT'
+2025-12-15 23:43:51,485 - INFO - WEATHER ingested | rows=154
+2025-12-15 23:43:51,507 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D10/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18449'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'e8e3570f-da0f-11f0-bae8-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:43:52,043 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:43:52 GMT'
+    'ETag': '"0x8DE3C33CDA64CB0"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '7414ce01-001e-0072-3f1c-6e5842000000'
+    'x-ms-client-request-id': 'e8e3570f-da0f-11f0-bae8-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:43:52 GMT'
+2025-12-15 23:43:52,045 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:43:52,045 - INFO - SUCCESS | Season=2024, Round=10, Session=R
+2025-12-15 23:43:52,046 - INFO - Starting ingestion | Season=2024, Round=11, Session=R
+2025-12-15 23:43:52,071 - INFO - Loading data for Austrian Grand Prix - Race [v3.7.0]
+2025-12-15 23:43:52,073 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:43:52,073 - INFO - Fetching session info data...
+2025-12-15 23:43:52,597 - INFO - Data has been written to cache!
+2025-12-15 23:43:52,597 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:43:52,599 - INFO - Fetching driver list...
+2025-12-15 23:43:53,165 - INFO - Data has been written to cache!
+2025-12-15 23:43:53,207 - DEBUG - Failed to parse timestamp '-1:52:13.256' in Ergastresponse.
+2025-12-15 23:43:53,242 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:43:53,242 - INFO - Fetching session status data...
+2025-12-15 23:43:53,953 - INFO - Data has been written to cache!
+2025-12-15 23:43:53,954 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:43:53,954 - INFO - Fetching lap count data...
+2025-12-15 23:43:54,522 - INFO - Data has been written to cache!
+2025-12-15 23:43:54,523 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:43:54,523 - INFO - Fetching track status data...
+2025-12-15 23:43:55,058 - INFO - Data has been written to cache!
+2025-12-15 23:43:55,058 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:43:55,058 - INFO - Fetching timing data...
+2025-12-15 23:43:56,774 - INFO - Parsing timing data...
+2025-12-15 23:43:58,684 - INFO - Data has been written to cache!
+2025-12-15 23:43:58,684 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:43:58,684 - INFO - Fetching timing app data...
+2025-12-15 23:43:59,259 - INFO - Data has been written to cache!
+2025-12-15 23:43:59,259 - INFO - Processing timing data...
+2025-12-15 23:44:00,635 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:44:00,635 - INFO - Fetching car data...
+2025-12-15 23:44:01,880 - INFO - Parsing car data...
+2025-12-15 23:44:05,835 - WARNING - Driver 12: Car data is incomplete!
+2025-12-15 23:44:05,859 - WARNING - Driver  2: Car data is incomplete!
+2025-12-15 23:44:05,893 - WARNING - Driver  3: Car data is incomplete!
+2025-12-15 23:44:05,931 - WARNING - Driver  4: Car data is incomplete!
+2025-12-15 23:44:05,974 - WARNING - Driver 10: Car data is incomplete!
+2025-12-15 23:44:06,007 - WARNING - Driver 11: Car data is incomplete!
+2025-12-15 23:44:06,032 - WARNING - Driver 14: Car data is incomplete!
+2025-12-15 23:44:06,058 - WARNING - Driver 16: Car data is incomplete!
+2025-12-15 23:44:06,079 - WARNING - Driver 18: Car data is incomplete!
+2025-12-15 23:44:06,125 - WARNING - Driver 20: Car data is incomplete!
+2025-12-15 23:44:06,155 - WARNING - Driver 22: Car data is incomplete!
+2025-12-15 23:44:06,180 - WARNING - Driver 23: Car data is incomplete!
+2025-12-15 23:44:06,209 - WARNING - Driver 27: Car data is incomplete!
+2025-12-15 23:44:06,230 - WARNING - Driver 31: Car data is incomplete!
+2025-12-15 23:44:06,257 - WARNING - Driver 44: Car data is incomplete!
+2025-12-15 23:44:06,291 - WARNING - Driver 55: Car data is incomplete!
+2025-12-15 23:44:06,325 - WARNING - Driver 63: Car data is incomplete!
+2025-12-15 23:44:06,355 - WARNING - Driver 77: Car data is incomplete!
+2025-12-15 23:44:06,380 - WARNING - Driver 81: Car data is incomplete!
+2025-12-15 23:44:06,492 - INFO - Data has been written to cache!
+2025-12-15 23:44:06,493 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:44:06,494 - INFO - Fetching position data...
+2025-12-15 23:44:07,636 - INFO - Parsing position data...
+2025-12-15 23:44:11,811 - WARNING - Driver 12: Position data is incomplete!
+2025-12-15 23:44:11,817 - WARNING - Driver  2: Position data is incomplete!
+2025-12-15 23:44:11,870 - WARNING - Driver  3: Position data is incomplete!
+2025-12-15 23:44:11,928 - WARNING - Driver  4: Position data is incomplete!
+2025-12-15 23:44:11,973 - WARNING - Driver 10: Position data is incomplete!
+2025-12-15 23:44:12,013 - WARNING - Driver 11: Position data is incomplete!
+2025-12-15 23:44:12,044 - WARNING - Driver 14: Position data is incomplete!
+2025-12-15 23:44:12,085 - WARNING - Driver 16: Position data is incomplete!
+2025-12-15 23:44:12,142 - WARNING - Driver 18: Position data is incomplete!
+2025-12-15 23:44:12,181 - WARNING - Driver 20: Position data is incomplete!
+2025-12-15 23:44:12,217 - WARNING - Driver 22: Position data is incomplete!
+2025-12-15 23:44:12,246 - WARNING - Driver 23: Position data is incomplete!
+2025-12-15 23:44:12,292 - WARNING - Driver 27: Position data is incomplete!
+2025-12-15 23:44:12,325 - WARNING - Driver 31: Position data is incomplete!
+2025-12-15 23:44:12,367 - WARNING - Driver 44: Position data is incomplete!
+2025-12-15 23:44:12,403 - WARNING - Driver 55: Position data is incomplete!
+2025-12-15 23:44:12,426 - WARNING - Driver 63: Position data is incomplete!
+2025-12-15 23:44:12,466 - WARNING - Driver 77: Position data is incomplete!
+2025-12-15 23:44:12,512 - WARNING - Driver 81: Position data is incomplete!
+2025-12-15 23:44:12,921 - INFO - Data has been written to cache!
+2025-12-15 23:44:14,734 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:44:14,734 - INFO - Fetching weather data...
+2025-12-15 23:44:15,316 - INFO - Data has been written to cache!
+2025-12-15 23:44:15,318 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:44:15,319 - INFO - Fetching race control messages...
+2025-12-15 23:44:15,850 - INFO - Data has been written to cache!
+2025-12-15 23:44:15,950 - INFO - Finished loading data for 20 drivers: ['63', '81', '55', '44', '1', '27', '11', '20', '3', '10', '16', '31', '18', '22', '23', '77', '24', '14', '2', '4']
+2025-12-15 23:44:15,950 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D11/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '133810'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f775398d-da0f-11f0-98cf-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:44:16,526 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:44:16 GMT'
+    'ETag': '"0x8DE3C33DC3DF894"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'd264db72-801e-006c-4a1c-6eb49a000000'
+    'x-ms-client-request-id': 'f775398d-da0f-11f0-98cf-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:44:16 GMT'
+2025-12-15 23:44:16,529 - INFO - LAPS ingested | rows=1405
+2025-12-15 23:44:16,535 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D11/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '10214'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f7ce64e7-da0f-11f0-a842-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:44:17,065 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:44:17 GMT'
+    'ETag': '"0x8DE3C33DC91F648"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '936f024f-401e-0097-4a1c-6e0900000000'
+    'x-ms-client-request-id': 'f7ce64e7-da0f-11f0-a842-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:44:17 GMT'
+2025-12-15 23:44:17,065 - INFO - WEATHER ingested | rows=143
+2025-12-15 23:44:17,088 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D11/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18418'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f822a8b2-da0f-11f0-8a0d-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:44:17,627 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:44:18 GMT'
+    'ETag': '"0x8DE3C33DCE5DC04"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'dcc5ca49-201e-0007-271c-6e336e000000'
+    'x-ms-client-request-id': 'f822a8b2-da0f-11f0-8a0d-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:44:17 GMT'
+2025-12-15 23:44:17,630 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:44:17,630 - INFO - SUCCESS | Season=2024, Round=11, Session=R
+2025-12-15 23:44:17,630 - INFO - Starting ingestion | Season=2024, Round=12, Session=R
+2025-12-15 23:44:17,637 - INFO - Loading data for British Grand Prix - Race [v3.7.0]
+2025-12-15 23:44:17,637 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:44:17,649 - INFO - Fetching session info data...
+2025-12-15 23:44:18,190 - INFO - Data has been written to cache!
+2025-12-15 23:44:18,191 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:44:18,192 - INFO - Fetching driver list...
+2025-12-15 23:44:18,707 - INFO - Data has been written to cache!
+2025-12-15 23:44:19,050 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:44:19,050 - INFO - Fetching session status data...
+2025-12-15 23:44:19,567 - INFO - Data has been written to cache!
+2025-12-15 23:44:19,567 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:44:19,567 - INFO - Fetching lap count data...
+2025-12-15 23:44:20,099 - INFO - Data has been written to cache!
+2025-12-15 23:44:20,099 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:44:20,099 - INFO - Fetching track status data...
+2025-12-15 23:44:20,616 - INFO - Data has been written to cache!
+2025-12-15 23:44:20,616 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:44:20,616 - INFO - Fetching timing data...
+2025-12-15 23:44:22,243 - INFO - Parsing timing data...
+2025-12-15 23:44:23,664 - INFO - Data has been written to cache!
+2025-12-15 23:44:23,665 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:44:23,665 - INFO - Fetching timing app data...
+2025-12-15 23:44:24,213 - INFO - Data has been written to cache!
+2025-12-15 23:44:24,213 - INFO - Processing timing data...
+2025-12-15 23:44:25,277 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:44:25,277 - INFO - Fetching car data...
+2025-12-15 23:44:26,557 - INFO - Parsing car data...
+2025-12-15 23:44:30,664 - WARNING - Driver 21: Car data is incomplete!
+2025-12-15 23:44:30,767 - WARNING - Driver  3: Car data is incomplete!
+2025-12-15 23:44:30,856 - INFO - Data has been written to cache!
+2025-12-15 23:44:30,857 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:44:30,857 - INFO - Fetching position data...
+2025-12-15 23:44:31,926 - INFO - Parsing position data...
+2025-12-15 23:44:36,217 - WARNING - Driver 21: Position data is incomplete!
+2025-12-15 23:44:36,255 - WARNING - Driver  3: Position data is incomplete!
+2025-12-15 23:44:36,799 - INFO - Data has been written to cache!
+2025-12-15 23:44:38,666 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:44:38,666 - INFO - Fetching weather data...
+2025-12-15 23:44:39,218 - INFO - Data has been written to cache!
+2025-12-15 23:44:39,220 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:44:39,221 - INFO - Fetching race control messages...
+2025-12-15 23:44:39,753 - INFO - Data has been written to cache!
+2025-12-15 23:44:39,824 - INFO - Finished loading data for 20 drivers: ['44', '1', '4', '81', '55', '27', '18', '14', '23', '22', '2', '20', '3', '16', '77', '31', '11', '24', '63', '10']
+2025-12-15 23:44:39,838 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D12/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '105012'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '05b222ab-da10-11f0-9af3-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:44:40,406 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:44:40 GMT'
+    'ETag': '"0x8DE3C33EA7ABC90"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'd66f8aa9-601e-005b-171c-6e6636000000'
+    'x-ms-client-request-id': '05b222ab-da10-11f0-9af3-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:44:40 GMT'
+2025-12-15 23:44:40,406 - INFO - LAPS ingested | rows=961
+2025-12-15 23:44:40,416 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D12/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '10446'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '060a801e-da10-11f0-ac12-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:44:40,964 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:44:41 GMT'
+    'ETag': '"0x8DE3C33EACF1EB4"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'd0a5092a-601e-004b-2c1c-6ea35e000000'
+    'x-ms-client-request-id': '060a801e-da10-11f0-ac12-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:44:40 GMT'
+2025-12-15 23:44:40,964 - INFO - WEATHER ingested | rows=147
+2025-12-15 23:44:40,964 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D12/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18464'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '065e1ec9-da10-11f0-ab2b-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:44:41,496 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:44:41 GMT'
+    'ETag': '"0x8DE3C33EB200B38"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'ac8fc630-f01e-0066-611c-6e102d000000'
+    'x-ms-client-request-id': '065e1ec9-da10-11f0-ab2b-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:44:41 GMT'
+2025-12-15 23:44:41,498 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:44:41,498 - INFO - SUCCESS | Season=2024, Round=12, Session=R
+2025-12-15 23:44:41,498 - INFO - Starting ingestion | Season=2024, Round=13, Session=R
+2025-12-15 23:44:41,518 - INFO - Loading data for Hungarian Grand Prix - Race [v3.7.0]
+2025-12-15 23:44:41,526 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:44:41,527 - INFO - Fetching session info data...
+2025-12-15 23:44:42,042 - INFO - Data has been written to cache!
+2025-12-15 23:44:42,043 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:44:42,043 - INFO - Fetching driver list...
+2025-12-15 23:44:42,565 - INFO - Data has been written to cache!
+2025-12-15 23:44:42,636 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:44:42,636 - INFO - Fetching session status data...
+2025-12-15 23:44:43,324 - INFO - Data has been written to cache!
+2025-12-15 23:44:43,325 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:44:43,326 - INFO - Fetching lap count data...
+2025-12-15 23:44:43,840 - INFO - Data has been written to cache!
+2025-12-15 23:44:43,841 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:44:43,841 - INFO - Fetching track status data...
+2025-12-15 23:44:44,348 - INFO - Data has been written to cache!
+2025-12-15 23:44:44,348 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:44:44,348 - INFO - Fetching timing data...
+2025-12-15 23:44:46,031 - INFO - Parsing timing data...
+2025-12-15 23:44:47,946 - INFO - Data has been written to cache!
+2025-12-15 23:44:47,948 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:44:47,948 - INFO - Fetching timing app data...
+2025-12-15 23:44:48,583 - INFO - Data has been written to cache!
+2025-12-15 23:44:48,583 - INFO - Processing timing data...
+2025-12-15 23:44:49,881 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:44:49,881 - INFO - Fetching car data...
+2025-12-15 23:44:51,277 - INFO - Parsing car data...
+2025-12-15 23:44:55,663 - INFO - Data has been written to cache!
+2025-12-15 23:44:55,663 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:44:55,663 - INFO - Fetching position data...
+2025-12-15 23:44:56,980 - INFO - Parsing position data...
+2025-12-15 23:45:02,189 - INFO - Data has been written to cache!
+2025-12-15 23:45:04,189 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:45:04,190 - INFO - Fetching weather data...
+2025-12-15 23:45:04,764 - INFO - Data has been written to cache!
+2025-12-15 23:45:04,764 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:45:04,764 - INFO - Fetching race control messages...
+2025-12-15 23:45:05,347 - INFO - Data has been written to cache!
+2025-12-15 23:45:05,425 - INFO - Finished loading data for 20 drivers: ['81', '4', '44', '16', '1', '55', '11', '63', '22', '18', '14', '3', '27', '23', '20', '77', '2', '31', '24', '10']
+2025-12-15 23:45:05,438 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D13/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '130776'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '14f47aa9-da10-11f0-8792-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:45:06,031 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:45:06 GMT'
+    'ETag': '"0x8DE3C33F9BFE018"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '593abe79-f01e-00ad-411c-6e1378000000'
+    'x-ms-client-request-id': '14f47aa9-da10-11f0-8792-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:45:05 GMT'
+2025-12-15 23:45:06,034 - INFO - LAPS ingested | rows=1355
+2025-12-15 23:45:06,038 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D13/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '10534'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '15502016-da10-11f0-a20d-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:45:06,571 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:45:06 GMT'
+    'ETag': '"0x8DE3C33FA121068"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '50e07367-601e-0029-331c-6e6179000000'
+    'x-ms-client-request-id': '15502016-da10-11f0-a20d-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:45:06 GMT'
+2025-12-15 23:45:06,573 - INFO - WEATHER ingested | rows=155
+2025-12-15 23:45:06,583 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D13/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18433'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '15a33e55-da10-11f0-8253-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:45:07,121 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:45:07 GMT'
+    'ETag': '"0x8DE3C33FA662580"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '3fab6389-c01e-0089-711c-6ee5d8000000'
+    'x-ms-client-request-id': '15a33e55-da10-11f0-8253-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:45:06 GMT'
+2025-12-15 23:45:07,123 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:45:07,123 - INFO - SUCCESS | Season=2024, Round=13, Session=R
+2025-12-15 23:45:07,124 - INFO - Starting ingestion | Season=2024, Round=14, Session=R
+2025-12-15 23:45:07,142 - INFO - Loading data for Belgian Grand Prix - Race [v3.7.0]
+2025-12-15 23:45:07,144 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:45:07,144 - INFO - Fetching session info data...
+2025-12-15 23:45:07,663 - INFO - Data has been written to cache!
+2025-12-15 23:45:07,663 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:45:07,663 - INFO - Fetching driver list...
+2025-12-15 23:45:08,182 - INFO - Data has been written to cache!
+2025-12-15 23:45:08,220 - DEBUG - Failed to parse timestamp '-1:59:59.474' in Ergastresponse.
+2025-12-15 23:45:08,248 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:45:08,248 - INFO - Fetching session status data...
+2025-12-15 23:45:08,940 - INFO - Data has been written to cache!
+2025-12-15 23:45:08,942 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:45:08,943 - INFO - Fetching lap count data...
+2025-12-15 23:45:09,513 - INFO - Data has been written to cache!
+2025-12-15 23:45:09,513 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:45:09,515 - INFO - Fetching track status data...
+2025-12-15 23:45:10,052 - INFO - Data has been written to cache!
+2025-12-15 23:45:10,053 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:45:10,054 - INFO - Fetching timing data...
+2025-12-15 23:45:11,629 - INFO - Parsing timing data...
+2025-12-15 23:45:13,074 - INFO - Data has been written to cache!
+2025-12-15 23:45:13,074 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:45:13,074 - INFO - Fetching timing app data...
+2025-12-15 23:45:13,634 - INFO - Data has been written to cache!
+2025-12-15 23:45:13,634 - INFO - Processing timing data...
+2025-12-15 23:45:13,881 - WARNING - Fixed incorrect tyre stint information for driver '14'
+2025-12-15 23:45:13,951 - WARNING - Fixed incorrect tyre stint information for driver '3'
+2025-12-15 23:45:13,990 - WARNING - Fixed incorrect tyre stint information for driver '18'
+2025-12-15 23:45:14,130 - WARNING - Fixed incorrect tyre stint information for driver '22'
+2025-12-15 23:45:14,650 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:45:14,650 - INFO - Fetching car data...
+2025-12-15 23:45:15,840 - INFO - Parsing car data...
+2025-12-15 23:45:19,918 - INFO - Data has been written to cache!
+2025-12-15 23:45:19,919 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:45:19,919 - INFO - Fetching position data...
+2025-12-15 23:45:21,046 - INFO - Parsing position data...
+2025-12-15 23:45:25,280 - INFO - Data has been written to cache!
+2025-12-15 23:45:27,028 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:45:27,030 - INFO - Fetching weather data...
+2025-12-15 23:45:27,601 - INFO - Data has been written to cache!
+2025-12-15 23:45:27,601 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:45:27,601 - INFO - Fetching race control messages...
+2025-12-15 23:45:28,147 - INFO - Data has been written to cache!
+2025-12-15 23:45:28,213 - INFO - Finished loading data for 20 drivers: ['44', '81', '16', '1', '4', '55', '11', '14', '31', '3', '18', '23', '10', '20', '77', '22', '2', '27', '24', '63']
+2025-12-15 23:45:28,230 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D14/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '90943'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '228a542f-da10-11f0-9f7f-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:45:28,796 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:45:29 GMT'
+    'ETag': '"0x8DE3C3407522C68"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4931bf5c-701e-00b3-271c-6effa0000000'
+    'x-ms-client-request-id': '228a542f-da10-11f0-9f7f-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:45:28 GMT'
+2025-12-15 23:45:28,796 - INFO - LAPS ingested | rows=841
+2025-12-15 23:45:28,796 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D14/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '10043'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '22e0a8bb-da10-11f0-869c-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:45:29,350 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:45:29 GMT'
+    'ETag': '"0x8DE3C3407A614EC"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '815efa3a-801e-0088-5e1c-6eba04000000'
+    'x-ms-client-request-id': '22e0a8bb-da10-11f0-869c-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:45:29 GMT'
+2025-12-15 23:45:29,353 - INFO - WEATHER ingested | rows=137
+2025-12-15 23:45:29,370 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D14/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18438'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '2337abca-da10-11f0-9461-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:45:29,896 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:45:30 GMT'
+    'ETag': '"0x8DE3C3407FB79E4"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'eddabd4b-401e-0063-1a1c-6ec2f6000000'
+    'x-ms-client-request-id': '2337abca-da10-11f0-9461-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:45:30 GMT'
+2025-12-15 23:45:29,896 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:45:29,912 - INFO - SUCCESS | Season=2024, Round=14, Session=R
+2025-12-15 23:45:29,913 - INFO - Starting ingestion | Season=2024, Round=15, Session=R
+2025-12-15 23:45:29,937 - INFO - Loading data for Dutch Grand Prix - Race [v3.7.0]
+2025-12-15 23:45:29,937 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:45:29,941 - INFO - Fetching session info data...
+2025-12-15 23:45:30,449 - INFO - Data has been written to cache!
+2025-12-15 23:45:30,450 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:45:30,451 - INFO - Fetching driver list...
+2025-12-15 23:45:31,006 - INFO - Data has been written to cache!
+2025-12-15 23:45:31,098 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:45:31,099 - INFO - Fetching session status data...
+2025-12-15 23:45:31,918 - INFO - Data has been written to cache!
+2025-12-15 23:45:31,920 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:45:31,920 - INFO - Fetching lap count data...
+2025-12-15 23:45:32,575 - INFO - Data has been written to cache!
+2025-12-15 23:45:32,576 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:45:32,576 - INFO - Fetching track status data...
+2025-12-15 23:45:33,098 - INFO - Data has been written to cache!
+2025-12-15 23:45:33,098 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:45:33,098 - INFO - Fetching timing data...
+2025-12-15 23:45:35,465 - INFO - Parsing timing data...
+2025-12-15 23:45:37,629 - INFO - Data has been written to cache!
+2025-12-15 23:45:37,629 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:45:37,629 - INFO - Fetching timing app data...
+2025-12-15 23:45:38,183 - INFO - Data has been written to cache!
+2025-12-15 23:45:38,184 - INFO - Processing timing data...
+2025-12-15 23:45:39,501 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:45:39,501 - INFO - Fetching car data...
+2025-12-15 23:45:40,882 - INFO - Parsing car data...
+2025-12-15 23:45:45,745 - INFO - Data has been written to cache!
+2025-12-15 23:45:45,746 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:45:45,746 - INFO - Fetching position data...
+2025-12-15 23:45:47,053 - INFO - Parsing position data...
+2025-12-15 23:45:54,699 - INFO - Data has been written to cache!
+2025-12-15 23:45:57,304 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:45:57,305 - INFO - Fetching weather data...
+2025-12-15 23:45:57,985 - INFO - Data has been written to cache!
+2025-12-15 23:45:57,989 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:45:57,990 - INFO - Fetching race control messages...
+2025-12-15 23:45:58,714 - INFO - Data has been written to cache!
+2025-12-15 23:45:58,843 - INFO - Finished loading data for 20 drivers: ['4', '1', '16', '81', '55', '11', '63', '44', '10', '14', '27', '3', '18', '23', '31', '2', '22', '20', '77', '24']
+2025-12-15 23:45:58,874 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D15/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '134911'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '34ce1b73-da10-11f0-b752-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:45:59,582 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:45:59 GMT'
+    'ETag': '"0x8DE3C3419AAE630"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'f20a32d1-001e-002f-221c-6e52c6000000'
+    'x-ms-client-request-id': '34ce1b73-da10-11f0-b752-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:45:59 GMT'
+2025-12-15 23:45:59,585 - INFO - LAPS ingested | rows=1426
+2025-12-15 23:45:59,592 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D15/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '10019'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '353bca60-da10-11f0-8c4f-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:46:00,206 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:46:00 GMT'
+    'ETag': '"0x8DE3C341A0AE338"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '12d92fb7-b01e-002a-431c-6e801d000000'
+    'x-ms-client-request-id': '353bca60-da10-11f0-8c4f-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:45:59 GMT'
+2025-12-15 23:46:00,208 - INFO - WEATHER ingested | rows=153
+2025-12-15 23:46:00,217 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D15/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18433'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '359b2eb4-da10-11f0-b7ed-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:46:00,878 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:46:01 GMT'
+    'ETag': '"0x8DE3C341A70B3B8"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'f8a71505-201e-0091-1e1c-6e3abf000000'
+    'x-ms-client-request-id': '359b2eb4-da10-11f0-b7ed-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:46:00 GMT'
+2025-12-15 23:46:00,881 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:46:00,881 - INFO - SUCCESS | Season=2024, Round=15, Session=R
+2025-12-15 23:46:00,882 - INFO - Starting ingestion | Season=2024, Round=16, Session=R
+2025-12-15 23:46:00,909 - INFO - Loading data for Italian Grand Prix - Race [v3.7.0]
+2025-12-15 23:46:00,912 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:46:00,914 - INFO - Fetching session info data...
+2025-12-15 23:46:01,579 - INFO - Data has been written to cache!
+2025-12-15 23:46:01,579 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:46:01,581 - INFO - Fetching driver list...
+2025-12-15 23:46:02,251 - INFO - Data has been written to cache!
+2025-12-15 23:46:02,332 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:46:02,333 - INFO - Fetching session status data...
+2025-12-15 23:46:03,178 - INFO - Data has been written to cache!
+2025-12-15 23:46:03,180 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:46:03,181 - INFO - Fetching lap count data...
+2025-12-15 23:46:04,009 - INFO - Data has been written to cache!
+2025-12-15 23:46:04,010 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:46:04,011 - INFO - Fetching track status data...
+2025-12-15 23:46:04,690 - INFO - Data has been written to cache!
+2025-12-15 23:46:04,693 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:46:04,694 - INFO - Fetching timing data...
+2025-12-15 23:46:06,566 - INFO - Parsing timing data...
+2025-12-15 23:46:08,549 - INFO - Data has been written to cache!
+2025-12-15 23:46:08,549 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:46:08,550 - INFO - Fetching timing app data...
+2025-12-15 23:46:09,232 - INFO - Data has been written to cache!
+2025-12-15 23:46:09,232 - INFO - Processing timing data...
+2025-12-15 23:46:10,747 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:46:10,748 - INFO - Fetching car data...
+2025-12-15 23:46:12,158 - INFO - Parsing car data...
+2025-12-15 23:46:17,433 - INFO - Data has been written to cache!
+2025-12-15 23:46:17,434 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:46:17,435 - INFO - Fetching position data...
+2025-12-15 23:46:18,714 - INFO - Parsing position data...
+2025-12-15 23:46:25,553 - INFO - Data has been written to cache!
+2025-12-15 23:46:28,026 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:46:28,029 - INFO - Fetching weather data...
+2025-12-15 23:46:28,725 - INFO - Data has been written to cache!
+2025-12-15 23:46:28,727 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:46:28,728 - INFO - Fetching race control messages...
+2025-12-15 23:46:29,385 - INFO - Data has been written to cache!
+2025-12-15 23:46:29,498 - INFO - Finished loading data for 20 drivers: ['16', '81', '4', '55', '44', '1', '63', '11', '23', '20', '14', '43', '3', '31', '10', '77', '27', '24', '18', '22']
+2025-12-15 23:46:29,519 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D16/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '104976'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '47124e36-da10-11f0-ab6d-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:46:30,236 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:46:30 GMT'
+    'ETag': '"0x8DE3C342BF04EF8"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '6516a563-301e-0079-271d-6ea329000000'
+    'x-ms-client-request-id': '47124e36-da10-11f0-ab6d-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:46:30 GMT'
+2025-12-15 23:46:30,241 - INFO - LAPS ingested | rows=1008
+2025-12-15 23:46:30,246 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D16/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '10057'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '47813905-da10-11f0-9a0c-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:46:30,900 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:46:31 GMT'
+    'ETag': '"0x8DE3C342C556938"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '6b194d87-301e-009d-7e1d-6eadb7000000'
+    'x-ms-client-request-id': '47813905-da10-11f0-9a0c-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:46:30 GMT'
+2025-12-15 23:46:30,904 - INFO - WEATHER ingested | rows=133
+2025-12-15 23:46:30,918 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D16/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18130'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '47e7b8e5-da10-11f0-8054-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:46:31,799 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:46:32 GMT'
+    'ETag': '"0x8DE3C342CD68F00"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'ac6ff62c-501e-0040-5e1d-6e5835000000'
+    'x-ms-client-request-id': '47e7b8e5-da10-11f0-8054-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:46:31 GMT'
+2025-12-15 23:46:31,801 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:46:31,802 - INFO - SUCCESS | Season=2024, Round=16, Session=R
+2025-12-15 23:46:31,802 - INFO - Starting ingestion | Season=2024, Round=17, Session=R
+2025-12-15 23:46:31,813 - INFO - Loading data for Azerbaijan Grand Prix - Race [v3.7.0]
+2025-12-15 23:46:31,824 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:46:31,825 - INFO - Fetching session info data...
+2025-12-15 23:46:32,461 - INFO - Data has been written to cache!
+2025-12-15 23:46:32,461 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:46:32,462 - INFO - Fetching driver list...
+2025-12-15 23:46:33,157 - INFO - Data has been written to cache!
+2025-12-15 23:46:33,207 - DEBUG - Failed to parse timestamp '-1:55:43.191' in Ergastresponse.
+2025-12-15 23:46:33,207 - DEBUG - Failed to parse timestamp '-1:55:43.761' in Ergastresponse.
+2025-12-15 23:46:33,208 - DEBUG - Failed to parse timestamp '-1:50:23.073' in Ergastresponse.
+2025-12-15 23:46:33,242 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:46:33,242 - INFO - Fetching session status data...
+2025-12-15 23:46:34,020 - INFO - Data has been written to cache!
+2025-12-15 23:46:34,021 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:46:34,021 - INFO - Fetching lap count data...
+2025-12-15 23:46:34,625 - INFO - Data has been written to cache!
+2025-12-15 23:46:34,626 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:46:34,626 - INFO - Fetching track status data...
+2025-12-15 23:46:35,306 - INFO - Data has been written to cache!
+2025-12-15 23:46:35,309 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:46:35,310 - INFO - Fetching timing data...
+2025-12-15 23:46:37,663 - INFO - Parsing timing data...
+2025-12-15 23:46:40,259 - INFO - Data has been written to cache!
+2025-12-15 23:46:40,259 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:46:40,259 - INFO - Fetching timing app data...
+2025-12-15 23:46:41,062 - INFO - Data has been written to cache!
+2025-12-15 23:46:41,063 - INFO - Processing timing data...
+2025-12-15 23:46:42,834 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:46:42,834 - INFO - Fetching car data...
+2025-12-15 23:46:44,300 - INFO - Parsing car data...
+2025-12-15 23:46:50,623 - INFO - Data has been written to cache!
+2025-12-15 23:46:50,624 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:46:50,625 - INFO - Fetching position data...
+2025-12-15 23:46:51,908 - INFO - Parsing position data...
+2025-12-15 23:46:58,224 - INFO - Data has been written to cache!
+2025-12-15 23:47:01,261 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:47:01,262 - INFO - Fetching weather data...
+2025-12-15 23:47:01,917 - INFO - Data has been written to cache!
+2025-12-15 23:47:01,917 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:47:01,917 - INFO - Fetching race control messages...
+2025-12-15 23:47:02,709 - INFO - Data has been written to cache!
+2025-12-15 23:47:02,889 - INFO - Finished loading data for 20 drivers: ['81', '16', '63', '4', '1', '14', '23', '43', '44', '50', '27', '10', '3', '24', '31', '77', '11', '55', '18', '22']
+2025-12-15 23:47:02,914 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D17/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '103472'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '5af9ef90-da10-11f0-a343-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:47:03,687 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:47:04 GMT'
+    'ETag': '"0x8DE3C343FE0A448"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '3070cf8c-201e-0065-7c1d-6ef149000000'
+    'x-ms-client-request-id': '5af9ef90-da10-11f0-a343-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:47:03 GMT'
+2025-12-15 23:47:03,690 - INFO - LAPS ingested | rows=973
+2025-12-15 23:47:03,697 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D17/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '10452'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '5b71572f-da10-11f0-8c1e-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:47:04,291 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:47:04 GMT'
+    'ETag': '"0x8DE3C34403D0B40"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '95a46803-701e-0057-231d-6ef13e000000'
+    'x-ms-client-request-id': '5b71572f-da10-11f0-8c1e-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:47:04 GMT'
+2025-12-15 23:47:04,295 - INFO - WEATHER ingested | rows=152
+2025-12-15 23:47:04,303 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D17/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18063'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '5bcdd8f6-da10-11f0-9a1e-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:47:04,961 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:47:05 GMT'
+    'ETag': '"0x8DE3C3440A34D54"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '243a0300-701e-000a-301d-6efbba000000'
+    'x-ms-client-request-id': '5bcdd8f6-da10-11f0-9a1e-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:47:05 GMT'
+2025-12-15 23:47:04,963 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:47:04,964 - INFO - SUCCESS | Season=2024, Round=17, Session=R
+2025-12-15 23:47:04,964 - INFO - Starting ingestion | Season=2024, Round=18, Session=R
+2025-12-15 23:47:05,105 - INFO - Loading data for Singapore Grand Prix - Race [v3.7.0]
+2025-12-15 23:47:05,107 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:47:05,108 - INFO - Fetching session info data...
+2025-12-15 23:47:05,822 - INFO - Data has been written to cache!
+2025-12-15 23:47:05,822 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:47:05,822 - INFO - Fetching driver list...
+2025-12-15 23:47:06,460 - INFO - Data has been written to cache!
+2025-12-15 23:47:06,490 - DEBUG - Failed to parse timestamp '-1:55:59.335' in Ergastresponse.
+2025-12-15 23:47:06,546 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:47:06,546 - INFO - Fetching session status data...
+2025-12-15 23:47:07,400 - INFO - Data has been written to cache!
+2025-12-15 23:47:07,400 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:47:07,400 - INFO - Fetching lap count data...
+2025-12-15 23:47:08,027 - INFO - Data has been written to cache!
+2025-12-15 23:47:08,027 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:47:08,028 - INFO - Fetching track status data...
+2025-12-15 23:47:08,661 - INFO - Data has been written to cache!
+2025-12-15 23:47:08,663 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:47:08,663 - INFO - Fetching timing data...
+2025-12-15 23:47:10,555 - INFO - Parsing timing data...
+2025-12-15 23:47:13,405 - INFO - Data has been written to cache!
+2025-12-15 23:47:13,410 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:47:13,412 - INFO - Fetching timing app data...
+2025-12-15 23:47:14,498 - INFO - Data has been written to cache!
+2025-12-15 23:47:14,498 - INFO - Processing timing data...
+2025-12-15 23:47:16,455 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:47:16,455 - INFO - Fetching car data...
+2025-12-15 23:47:17,990 - INFO - Parsing car data...
+2025-12-15 23:47:24,771 - WARNING - Driver  2: Car data is incomplete!
+2025-12-15 23:47:24,934 - WARNING - Driver 40: Car data is incomplete!
+2025-12-15 23:47:25,035 - WARNING - Driver  3: Car data is incomplete!
+2025-12-15 23:47:25,084 - WARNING - Driver 18: Car data is incomplete!
+2025-12-15 23:47:25,126 - WARNING - Driver 43: Car data is incomplete!
+2025-12-15 23:47:25,292 - INFO - Data has been written to cache!
+2025-12-15 23:47:25,293 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:47:25,294 - INFO - Fetching position data...
+2025-12-15 23:47:26,808 - INFO - Parsing position data...
+2025-12-15 23:47:32,642 - WARNING - Driver  2: Position data is incomplete!
+2025-12-15 23:47:32,662 - WARNING - Driver 40: Position data is incomplete!
+2025-12-15 23:47:32,717 - WARNING - Driver  3: Position data is incomplete!
+2025-12-15 23:47:32,795 - WARNING - Driver 18: Position data is incomplete!
+2025-12-15 23:47:32,850 - WARNING - Driver 43: Position data is incomplete!
+2025-12-15 23:47:33,488 - INFO - Data has been written to cache!
+2025-12-15 23:47:36,318 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:47:36,319 - INFO - Fetching weather data...
+2025-12-15 23:47:37,033 - INFO - Data has been written to cache!
+2025-12-15 23:47:37,035 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:47:37,035 - INFO - Fetching race control messages...
+2025-12-15 23:47:37,754 - INFO - Data has been written to cache!
+2025-12-15 23:47:37,892 - INFO - Finished loading data for 20 drivers: ['4', '1', '81', '63', '16', '44', '55', '14', '27', '11', '43', '22', '31', '18', '24', '77', '10', '3', '20', '23']
+2025-12-15 23:47:37,923 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D18/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '116902'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '6fd7b361-da10-11f0-818f-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:47:38,806 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:47:39 GMT'
+    'ETag': '"0x8DE3C3454CFA288"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '09f295e5-e01e-0008-661d-6e4502000000'
+    'x-ms-client-request-id': '6fd7b361-da10-11f0-818f-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:47:38 GMT'
+2025-12-15 23:47:38,809 - INFO - LAPS ingested | rows=1177
+2025-12-15 23:47:38,816 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D18/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '10275'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '70603077-da10-11f0-9a79-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:47:39,541 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:47:39 GMT'
+    'ETag': '"0x8DE3C3455403468"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'd54fe211-a01e-0036-171d-6ed27d000000'
+    'x-ms-client-request-id': '70603077-da10-11f0-9a79-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:47:39 GMT'
+2025-12-15 23:47:39,541 - INFO - WEATHER ingested | rows=160
+2025-12-15 23:47:39,562 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D18/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18130'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '70d1efef-da10-11f0-b0f9-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:47:40,236 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:47:40 GMT'
+    'ETag': '"0x8DE3C3455A9D4D0"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '331d2cd0-c01e-0052-7c1d-6e23e5000000'
+    'x-ms-client-request-id': '70d1efef-da10-11f0-b0f9-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:47:40 GMT'
+2025-12-15 23:47:40,239 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:47:40,240 - INFO - SUCCESS | Season=2024, Round=18, Session=R
+2025-12-15 23:47:40,240 - INFO - Starting ingestion | Season=2024, Round=19, Session=R
+2025-12-15 23:47:40,285 - INFO - Loading data for United States Grand Prix - Race [v3.7.0]
+2025-12-15 23:47:40,289 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:47:40,290 - INFO - Fetching session info data...
+2025-12-15 23:47:41,037 - INFO - Data has been written to cache!
+2025-12-15 23:47:41,038 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:47:41,039 - INFO - Fetching driver list...
+2025-12-15 23:47:41,730 - INFO - Data has been written to cache!
+2025-12-15 23:47:41,809 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:47:41,809 - INFO - Fetching session status data...
+2025-12-15 23:47:42,664 - INFO - Data has been written to cache!
+2025-12-15 23:47:42,665 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:47:42,665 - INFO - Fetching lap count data...
+2025-12-15 23:47:43,269 - INFO - Data has been written to cache!
+2025-12-15 23:47:43,270 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:47:43,271 - INFO - Fetching track status data...
+2025-12-15 23:47:43,904 - INFO - Data has been written to cache!
+2025-12-15 23:47:43,904 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:47:43,904 - INFO - Fetching timing data...
+2025-12-15 23:47:45,740 - INFO - Parsing timing data...
+2025-12-15 23:47:47,384 - WARNING - Failed to align laps for drivers: ['44']
+2025-12-15 23:47:47,493 - INFO - Data has been written to cache!
+2025-12-15 23:47:47,494 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:47:47,495 - INFO - Fetching timing app data...
+2025-12-15 23:47:48,200 - INFO - Data has been written to cache!
+2025-12-15 23:47:48,200 - INFO - Processing timing data...
+2025-12-15 23:47:49,479 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:47:49,479 - INFO - Fetching car data...
+2025-12-15 23:47:50,921 - INFO - Parsing car data...
+2025-12-15 23:47:56,389 - WARNING - Driver  2: Car data is incomplete!
+2025-12-15 23:47:56,406 - WARNING - Driver  3: Car data is incomplete!
+2025-12-15 23:47:56,619 - WARNING - Driver 30: Car data is incomplete!
+2025-12-15 23:47:56,652 - WARNING - Driver 43: Car data is incomplete!
+2025-12-15 23:47:56,775 - INFO - Data has been written to cache!
+2025-12-15 23:47:56,775 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:47:56,775 - INFO - Fetching position data...
+2025-12-15 23:47:58,122 - INFO - Parsing position data...
+2025-12-15 23:48:03,887 - WARNING - Driver  2: Position data is incomplete!
+2025-12-15 23:48:03,904 - WARNING - Driver  3: Position data is incomplete!
+2025-12-15 23:48:03,953 - WARNING - Driver 30: Position data is incomplete!
+2025-12-15 23:48:04,008 - WARNING - Driver 43: Position data is incomplete!
+2025-12-15 23:48:04,034 - WARNING - Driver 241: Position data is incomplete!
+2025-12-15 23:48:04,051 - WARNING - Driver 242: Position data is incomplete!
+2025-12-15 23:48:04,081 - WARNING - Driver 243: Position data is incomplete!
+2025-12-15 23:48:04,565 - INFO - Data has been written to cache!
+2025-12-15 23:48:06,814 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:48:06,815 - INFO - Fetching weather data...
+2025-12-15 23:48:07,464 - INFO - Data has been written to cache!
+2025-12-15 23:48:07,466 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:48:07,467 - INFO - Fetching race control messages...
+2025-12-15 23:48:08,100 - INFO - Data has been written to cache!
+2025-12-15 23:48:08,297 - INFO - Finished loading data for 20 drivers: ['16', '55', '1', '4', '81', '63', '11', '27', '30', '43', '20', '10', '14', '22', '18', '23', '77', '31', '24', '44']
+2025-12-15 23:48:08,313 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D19/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '111318'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '81f51080-da10-11f0-86ea-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:48:09,113 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:48:09 GMT'
+    'ETag': '"0x8DE3C3466DFE060"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '57e5592f-801e-0031-6d1d-6ebe1e000000'
+    'x-ms-client-request-id': '81f51080-da10-11f0-86ea-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:48:09 GMT'
+2025-12-15 23:48:09,114 - INFO - LAPS ingested | rows=1059
+2025-12-15 23:48:09,122 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D19/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '10559'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '8270598d-da10-11f0-baf9-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:48:09,779 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:48:10 GMT'
+    'ETag': '"0x8DE3C346745A10C"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '0ab008d5-001e-004d-0a1d-6e90e1000000'
+    'x-ms-client-request-id': '8270598d-da10-11f0-baf9-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:48:09 GMT'
+2025-12-15 23:48:09,781 - INFO - WEATHER ingested | rows=155
+2025-12-15 23:48:09,795 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D19/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18052'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '82d70954-da10-11f0-b808-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:48:10,511 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:48:10 GMT'
+    'ETag': '"0x8DE3C3467B5120C"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '09f2d538-e01e-0008-3d1d-6e4502000000'
+    'x-ms-client-request-id': '82d70954-da10-11f0-b808-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:48:10 GMT'
+2025-12-15 23:48:10,514 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:48:10,514 - INFO - SUCCESS | Season=2024, Round=19, Session=R
+2025-12-15 23:48:10,515 - INFO - Starting ingestion | Season=2024, Round=20, Session=R
+2025-12-15 23:48:10,564 - INFO - Loading data for Mexico City Grand Prix - Race [v3.7.0]
+2025-12-15 23:48:10,566 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:48:10,566 - INFO - Fetching session info data...
+2025-12-15 23:48:11,323 - INFO - Data has been written to cache!
+2025-12-15 23:48:11,323 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:48:11,323 - INFO - Fetching driver list...
+2025-12-15 23:48:12,081 - INFO - Data has been written to cache!
+2025-12-15 23:48:12,215 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:48:12,216 - INFO - Fetching session status data...
+2025-12-15 23:48:13,433 - INFO - Data has been written to cache!
+2025-12-15 23:48:13,440 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:48:13,440 - INFO - Fetching lap count data...
+2025-12-15 23:48:14,065 - INFO - Data has been written to cache!
+2025-12-15 23:48:14,066 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:48:14,066 - INFO - Fetching track status data...
+2025-12-15 23:48:14,597 - INFO - Data has been written to cache!
+2025-12-15 23:48:14,598 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:48:14,599 - INFO - Fetching timing data...
+2025-12-15 23:48:16,267 - INFO - Parsing timing data...
+2025-12-15 23:48:18,018 - INFO - Data has been written to cache!
+2025-12-15 23:48:18,019 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:48:18,020 - INFO - Fetching timing app data...
+2025-12-15 23:48:18,633 - INFO - Data has been written to cache!
+2025-12-15 23:48:18,634 - INFO - Processing timing data...
+2025-12-15 23:48:19,852 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:48:19,852 - INFO - Fetching car data...
+2025-12-15 23:48:21,280 - INFO - Parsing car data...
+2025-12-15 23:48:26,037 - WARNING - Driver  2: Car data is incomplete!
+2025-12-15 23:48:26,056 - WARNING - Driver  3: Car data is incomplete!
+2025-12-15 23:48:26,183 - WARNING - Driver 30: Car data is incomplete!
+2025-12-15 23:48:26,207 - WARNING - Driver 43: Car data is incomplete!
+2025-12-15 23:48:26,317 - INFO - Data has been written to cache!
+2025-12-15 23:48:26,317 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:48:26,317 - INFO - Fetching position data...
+2025-12-15 23:48:27,602 - INFO - Parsing position data...
+2025-12-15 23:48:32,336 - WARNING - Driver  2: Position data is incomplete!
+2025-12-15 23:48:32,363 - WARNING - Driver  3: Position data is incomplete!
+2025-12-15 23:48:32,431 - WARNING - Driver 30: Position data is incomplete!
+2025-12-15 23:48:32,486 - WARNING - Driver 43: Position data is incomplete!
+2025-12-15 23:48:32,529 - WARNING - Driver 241: Position data is incomplete!
+2025-12-15 23:48:32,561 - WARNING - Driver 242: Position data is incomplete!
+2025-12-15 23:48:32,602 - WARNING - Driver 243: Position data is incomplete!
+2025-12-15 23:48:33,317 - INFO - Data has been written to cache!
+2025-12-15 23:48:35,534 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:48:35,534 - INFO - Fetching weather data...
+2025-12-15 23:48:36,078 - INFO - Data has been written to cache!
+2025-12-15 23:48:36,080 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:48:36,081 - INFO - Fetching race control messages...
+2025-12-15 23:48:36,625 - INFO - Data has been written to cache!
+2025-12-15 23:48:36,707 - INFO - Finished loading data for 20 drivers: ['55', '4', '16', '44', '63', '1', '20', '81', '27', '10', '18', '43', '31', '77', '24', '30', '11', '14', '23', '22']
+2025-12-15 23:48:36,720 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D20/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '122976'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '92e38d74-da10-11f0-9571-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:48:37,280 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:48:37 GMT'
+    'ETag': '"0x8DE3C3477A9F300"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '5f00a115-001e-003f-361d-6e97ae000000'
+    'x-ms-client-request-id': '92e38d74-da10-11f0-9571-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:48:37 GMT'
+2025-12-15 23:48:37,283 - INFO - LAPS ingested | rows=1215
+2025-12-15 23:48:37,291 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D20/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '10639'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '933aa632-da10-11f0-9d41-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:48:37,932 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:48:38 GMT'
+    'ETag': '"0x8DE3C34780EE4E0"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '5f37227c-101e-006e-741d-6e0a22000000'
+    'x-ms-client-request-id': '933aa632-da10-11f0-9d41-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:48:37 GMT'
+2025-12-15 23:48:37,944 - INFO - WEATHER ingested | rows=159
+2025-12-15 23:48:37,953 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D20/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18048'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '939fab77-da10-11f0-be3c-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:48:38,496 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:48:38 GMT'
+    'ETag': '"0x8DE3C3478628838"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '6b1a3e7c-301e-009d-361d-6eadb7000000'
+    'x-ms-client-request-id': '939fab77-da10-11f0-be3c-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:48:38 GMT'
+2025-12-15 23:48:38,498 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:48:38,499 - INFO - SUCCESS | Season=2024, Round=20, Session=R
+2025-12-15 23:48:38,499 - INFO - Starting ingestion | Season=2024, Round=21, Session=R
+2025-12-15 23:48:38,520 - INFO - Loading data for São Paulo Grand Prix - Race [v3.7.0]
+2025-12-15 23:48:38,523 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:48:38,523 - INFO - Fetching session info data...
+2025-12-15 23:48:39,010 - INFO - Data has been written to cache!
+2025-12-15 23:48:39,010 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:48:39,011 - INFO - Fetching driver list...
+2025-12-15 23:48:39,550 - INFO - Data has been written to cache!
+2025-12-15 23:48:39,630 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:48:39,631 - INFO - Fetching session status data...
+2025-12-15 23:48:40,325 - INFO - Data has been written to cache!
+2025-12-15 23:48:40,326 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:48:40,326 - INFO - Fetching lap count data...
+2025-12-15 23:48:40,841 - INFO - Data has been written to cache!
+2025-12-15 23:48:40,842 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:48:40,842 - INFO - Fetching track status data...
+2025-12-15 23:48:41,348 - INFO - Data has been written to cache!
+2025-12-15 23:48:41,350 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:48:41,351 - INFO - Fetching timing data...
+2025-12-15 23:48:42,883 - INFO - Parsing timing data...
+2025-12-15 23:48:44,449 - INFO - Data has been written to cache!
+2025-12-15 23:48:44,449 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:48:44,449 - INFO - Fetching timing app data...
+2025-12-15 23:48:45,078 - INFO - Data has been written to cache!
+2025-12-15 23:48:45,078 - INFO - Processing timing data...
+2025-12-15 23:48:45,766 - WARNING - No lap data for driver 23
+2025-12-15 23:48:46,283 - WARNING - Failed to perform lap accuracy check - all laps marked as inaccurate (driver 23)
+2025-12-15 23:48:46,362 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:48:46,363 - INFO - Fetching car data...
+2025-12-15 23:48:47,731 - INFO - Parsing car data...
+2025-12-15 23:48:53,407 - INFO - Data has been written to cache!
+2025-12-15 23:48:53,407 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:48:53,407 - INFO - Fetching position data...
+2025-12-15 23:48:54,616 - INFO - Parsing position data...
+2025-12-15 23:49:00,515 - WARNING - Driver 241: Position data is incomplete!
+2025-12-15 23:49:00,541 - WARNING - Driver 242: Position data is incomplete!
+2025-12-15 23:49:00,574 - WARNING - Driver 243: Position data is incomplete!
+2025-12-15 23:49:01,193 - INFO - Data has been written to cache!
+2025-12-15 23:49:03,699 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:49:03,699 - INFO - Fetching weather data...
+2025-12-15 23:49:04,382 - INFO - Data has been written to cache!
+2025-12-15 23:49:04,382 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:49:04,382 - INFO - Fetching race control messages...
+2025-12-15 23:49:04,912 - INFO - Data has been written to cache!
+2025-12-15 23:49:05,062 - INFO - Finished loading data for 20 drivers: ['1', '31', '10', '63', '16', '4', '22', '81', '30', '44', '11', '50', '77', '14', '24', '55', '43', '23', '18', '27']
+2025-12-15 23:49:05,074 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D21/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '119809'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'a3ca14b9-da10-11f0-a004-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:49:05,631 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:49:06 GMT'
+    'ETag': '"0x8DE3C34888FDAC0"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '31ea915b-201e-0075-641d-6e3421000000'
+    'x-ms-client-request-id': 'a3ca14b9-da10-11f0-a004-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:49:05 GMT'
+2025-12-15 23:49:05,633 - INFO - LAPS ingested | rows=1135
+2025-12-15 23:49:05,637 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D21/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '11288'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'a4200240-da10-11f0-9d0f-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:49:06,184 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:49:06 GMT'
+    'ETag': '"0x8DE3C3488E3EC34"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '3124ad57-901e-00ab-751d-6e20c7000000'
+    'x-ms-client-request-id': 'a4200240-da10-11f0-9d0f-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:49:06 GMT'
+2025-12-15 23:49:06,185 - INFO - WEATHER ingested | rows=201
+2025-12-15 23:49:06,202 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D21/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '17999'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'a4760942-da10-11f0-80d5-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:49:06,715 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:49:07 GMT'
+    'ETag': '"0x8DE3C348936F88C"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '63df0deb-001e-00a9-721d-6e9e7f000000'
+    'x-ms-client-request-id': 'a4760942-da10-11f0-80d5-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:49:06 GMT'
+2025-12-15 23:49:06,715 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:49:06,715 - INFO - SUCCESS | Season=2024, Round=21, Session=R
+2025-12-15 23:49:06,715 - INFO - Starting ingestion | Season=2024, Round=22, Session=R
+2025-12-15 23:49:06,751 - INFO - Loading data for Las Vegas Grand Prix - Race [v3.7.0]
+2025-12-15 23:49:06,756 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:49:06,759 - INFO - Fetching session info data...
+2025-12-15 23:49:07,332 - INFO - Data has been written to cache!
+2025-12-15 23:49:07,332 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:49:07,332 - INFO - Fetching driver list...
+2025-12-15 23:49:07,868 - INFO - Data has been written to cache!
+2025-12-15 23:49:07,994 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:49:07,995 - INFO - Fetching session status data...
+2025-12-15 23:49:08,652 - INFO - Data has been written to cache!
+2025-12-15 23:49:08,652 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:49:08,652 - INFO - Fetching lap count data...
+2025-12-15 23:49:09,182 - INFO - Data has been written to cache!
+2025-12-15 23:49:09,182 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:49:09,183 - INFO - Fetching track status data...
+2025-12-15 23:49:09,681 - INFO - Data has been written to cache!
+2025-12-15 23:49:09,681 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:49:09,681 - INFO - Fetching timing data...
+2025-12-15 23:49:11,216 - INFO - Parsing timing data...
+2025-12-15 23:49:12,483 - INFO - Data has been written to cache!
+2025-12-15 23:49:12,484 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:49:12,484 - INFO - Fetching timing app data...
+2025-12-15 23:49:13,053 - INFO - Data has been written to cache!
+2025-12-15 23:49:13,053 - INFO - Processing timing data...
+2025-12-15 23:49:13,787 - WARNING - Driver 63: Lap timing integrity check failed for 2 lap(s)
+2025-12-15 23:49:13,820 - WARNING - Driver 44: Lap timing integrity check failed for 1 lap(s)
+2025-12-15 23:49:13,840 - WARNING - Driver 55: Lap timing integrity check failed for 1 lap(s)
+2025-12-15 23:49:13,880 - WARNING - Driver 16: Lap timing integrity check failed for 2 lap(s)
+2025-12-15 23:49:13,904 - WARNING - Driver  1: Lap timing integrity check failed for 1 lap(s)
+2025-12-15 23:49:13,925 - WARNING - Driver  4: Lap timing integrity check failed for 1 lap(s)
+2025-12-15 23:49:13,939 - WARNING - Driver 81: Lap timing integrity check failed for 1 lap(s)
+2025-12-15 23:49:14,081 - WARNING - Driver 30: Lap timing integrity check failed for 2 lap(s)
+2025-12-15 23:49:14,113 - WARNING - Driver 77: Lap timing integrity check failed for 2 lap(s)
+2025-12-15 23:49:14,190 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:49:14,191 - INFO - Fetching car data...
+2025-12-15 23:49:15,397 - INFO - Parsing car data...
+2025-12-15 23:49:19,529 - INFO - Data has been written to cache!
+2025-12-15 23:49:19,530 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:49:19,531 - INFO - Fetching position data...
+2025-12-15 23:49:20,764 - INFO - Parsing position data...
+2025-12-15 23:49:25,239 - INFO - Data has been written to cache!
+2025-12-15 23:49:27,100 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:49:27,100 - INFO - Fetching weather data...
+2025-12-15 23:49:27,731 - INFO - Data has been written to cache!
+2025-12-15 23:49:27,731 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:49:27,731 - INFO - Fetching race control messages...
+2025-12-15 23:49:28,318 - INFO - Data has been written to cache!
+2025-12-15 23:49:28,322 - WARNING - Driver 63 completed the race distance 00:00.427000 before the recorded end of the session.
+2025-12-15 23:49:28,438 - INFO - Finished loading data for 20 drivers: ['63', '44', '55', '16', '1', '4', '81', '27', '22', '11', '14', '20', '24', '43', '18', '30', '31', '77', '23', '10']
+2025-12-15 23:49:28,462 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D22/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '100720'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'b1bac5e1-da10-11f0-809b-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:49:29,018 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:49:29 GMT'
+    'ETag': '"0x8DE3C3496809114"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '7addd2c2-701e-0035-531d-6e3319000000'
+    'x-ms-client-request-id': 'b1bac5e1-da10-11f0-809b-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:49:29 GMT'
+2025-12-15 23:49:29,020 - INFO - LAPS ingested | rows=938
+2025-12-15 23:49:29,026 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D22/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '10074'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'b210e848-da10-11f0-a63d-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:49:29,571 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:49:29 GMT'
+    'ETag': '"0x8DE3C3496D53A20"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'efaac46f-301e-0034-5e1d-6e6cc5000000'
+    'x-ms-client-request-id': 'b210e848-da10-11f0-a63d-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:49:29 GMT'
+2025-12-15 23:49:29,574 - INFO - WEATHER ingested | rows=143
+2025-12-15 23:49:29,589 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D22/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18065'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'b266bba3-da10-11f0-a835-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:49:30,142 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:49:30 GMT'
+    'ETag': '"0x8DE3C34972C4A30"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'd30cdd27-b01e-0067-651d-6e4ff1000000'
+    'x-ms-client-request-id': 'b266bba3-da10-11f0-a835-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:49:29 GMT'
+2025-12-15 23:49:30,144 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:49:30,145 - INFO - SUCCESS | Season=2024, Round=22, Session=R
+2025-12-15 23:49:30,145 - INFO - Starting ingestion | Season=2024, Round=23, Session=R
+2025-12-15 23:49:30,146 - INFO - Loading data for Qatar Grand Prix - Race [v3.7.0]
+2025-12-15 23:49:30,167 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:49:30,169 - INFO - Fetching session info data...
+2025-12-15 23:49:30,715 - INFO - Data has been written to cache!
+2025-12-15 23:49:30,715 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:49:30,716 - INFO - Fetching driver list...
+2025-12-15 23:49:31,254 - INFO - Data has been written to cache!
+2025-12-15 23:49:31,334 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:49:31,334 - INFO - Fetching session status data...
+2025-12-15 23:49:32,055 - INFO - Data has been written to cache!
+2025-12-15 23:49:32,055 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:49:32,055 - INFO - Fetching lap count data...
+2025-12-15 23:49:32,596 - INFO - Data has been written to cache!
+2025-12-15 23:49:32,597 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:49:32,597 - INFO - Fetching track status data...
+2025-12-15 23:49:33,117 - INFO - Data has been written to cache!
+2025-12-15 23:49:33,118 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:49:33,118 - INFO - Fetching timing data...
+2025-12-15 23:49:34,736 - INFO - Parsing timing data...
+2025-12-15 23:49:36,178 - INFO - Data has been written to cache!
+2025-12-15 23:49:36,193 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:49:36,193 - INFO - Fetching timing app data...
+2025-12-15 23:49:36,775 - INFO - Data has been written to cache!
+2025-12-15 23:49:36,776 - INFO - Processing timing data...
+2025-12-15 23:49:37,475 - WARNING - Fixed incorrect tyre stint information for driver '43'
+2025-12-15 23:49:37,481 - WARNING - Fixed incorrect tyre stint information for driver '31'
+2025-12-15 23:49:37,975 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:49:37,975 - INFO - Fetching car data...
+2025-12-15 23:49:39,334 - INFO - Parsing car data...
+2025-12-15 23:49:43,696 - INFO - Data has been written to cache!
+2025-12-15 23:49:43,696 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:49:43,696 - INFO - Fetching position data...
+2025-12-15 23:49:44,910 - INFO - Parsing position data...
+2025-12-15 23:49:49,212 - WARNING - Driver  2: Position data is incomplete!
+2025-12-15 23:49:49,244 - WARNING - Driver  3: Position data is incomplete!
+2025-12-15 23:49:49,283 - WARNING - Driver  5: Position data is incomplete!
+2025-12-15 23:49:49,406 - WARNING - Driver  6: Position data is incomplete!
+2025-12-15 23:49:49,432 - WARNING - Driver  7: Position data is incomplete!
+2025-12-15 23:49:49,457 - WARNING - Driver  8: Position data is incomplete!
+2025-12-15 23:49:49,483 - WARNING - Driver  9: Position data is incomplete!
+2025-12-15 23:49:49,506 - WARNING - Driver 12: Position data is incomplete!
+2025-12-15 23:49:49,525 - WARNING - Driver 15: Position data is incomplete!
+2025-12-15 23:49:49,544 - WARNING - Driver 17: Position data is incomplete!
+2025-12-15 23:49:49,565 - WARNING - Driver 19: Position data is incomplete!
+2025-12-15 23:49:49,582 - WARNING - Driver 21: Position data is incomplete!
+2025-12-15 23:49:49,594 - WARNING - Driver 25: Position data is incomplete!
+2025-12-15 23:49:49,613 - WARNING - Driver 26: Position data is incomplete!
+2025-12-15 23:49:49,641 - WARNING - Driver 28: Position data is incomplete!
+2025-12-15 23:49:49,670 - WARNING - Driver 29: Position data is incomplete!
+2025-12-15 23:49:49,716 - WARNING - Driver 30: Position data is incomplete!
+2025-12-15 23:49:49,756 - WARNING - Driver 31: Position data is incomplete!
+2025-12-15 23:49:49,793 - WARNING - Driver 43: Position data is incomplete!
+2025-12-15 23:49:49,833 - WARNING - Driver 44: Position data is incomplete!
+2025-12-15 23:49:49,879 - WARNING - Driver 55: Position data is incomplete!
+2025-12-15 23:49:49,920 - WARNING - Driver 63: Position data is incomplete!
+2025-12-15 23:49:49,949 - WARNING - Driver 77: Position data is incomplete!
+2025-12-15 23:49:49,987 - WARNING - Driver 81: Position data is incomplete!
+2025-12-15 23:49:50,012 - WARNING - Driver 241: Position data is incomplete!
+2025-12-15 23:49:50,038 - WARNING - Driver 242: Position data is incomplete!
+2025-12-15 23:49:50,061 - WARNING - Driver 243: Position data is incomplete!
+2025-12-15 23:49:50,763 - INFO - Data has been written to cache!
+2025-12-15 23:49:52,775 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:49:52,775 - INFO - Fetching weather data...
+2025-12-15 23:49:53,334 - INFO - Data has been written to cache!
+2025-12-15 23:49:53,338 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:49:53,339 - INFO - Fetching race control messages...
+2025-12-15 23:49:53,895 - INFO - Data has been written to cache!
+2025-12-15 23:49:54,064 - INFO - Finished loading data for 20 drivers: ['1', '16', '81', '63', '10', '55', '14', '24', '20', '4', '77', '44', '22', '30', '23', '27', '11', '18', '43', '31']
+2025-12-15 23:49:54,086 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D23/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '105236'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'c1008be0-da10-11f0-ab09-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:49:54,627 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:49:55 GMT'
+    'ETag': '"0x8DE3C34A5C43B14"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '03fbbd76-901e-0084-461d-6e2d0c000000'
+    'x-ms-client-request-id': 'c1008be0-da10-11f0-ab09-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:49:54 GMT'
+2025-12-15 23:49:54,629 - INFO - LAPS ingested | rows=943
+2025-12-15 23:49:54,633 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D23/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '10044'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'c15427e2-da10-11f0-9985-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:49:55,172 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:49:55 GMT'
+    'ETag': '"0x8DE3C34A6174470"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'ab9ad6f3-b01e-0077-7b1d-6e8a99000000'
+    'x-ms-client-request-id': 'c15427e2-da10-11f0-9985-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:49:54 GMT'
+2025-12-15 23:49:55,174 - INFO - WEATHER ingested | rows=151
+2025-12-15 23:49:55,185 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D23/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18044'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'c1a8527a-da10-11f0-8384-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:49:55,714 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:49:56 GMT'
+    'ETag': '"0x8DE3C34A66A0ECC"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '2759fe51-001e-0062-521d-6e9d2a000000'
+    'x-ms-client-request-id': 'c1a8527a-da10-11f0-8384-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:49:56 GMT'
+2025-12-15 23:49:55,716 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:49:55,716 - INFO - SUCCESS | Season=2024, Round=23, Session=R
+2025-12-15 23:49:55,716 - INFO - Starting ingestion | Season=2024, Round=24, Session=R
+2025-12-15 23:49:55,734 - INFO - Loading data for Abu Dhabi Grand Prix - Race [v3.7.0]
+2025-12-15 23:49:55,742 - INFO - No cached data found for session_info. Loading data...
+2025-12-15 23:49:55,743 - INFO - Fetching session info data...
+2025-12-15 23:49:56,257 - INFO - Data has been written to cache!
+2025-12-15 23:49:56,257 - INFO - No cached data found for driver_info. Loading data...
+2025-12-15 23:49:56,258 - INFO - Fetching driver list...
+2025-12-15 23:49:56,778 - INFO - Data has been written to cache!
+2025-12-15 23:49:57,099 - DEBUG - Failed to parse timestamp '-1:58:03.658' in Ergastresponse.
+2025-12-15 23:49:57,117 - INFO - No cached data found for session_status_data. Loading data...
+2025-12-15 23:49:57,117 - INFO - Fetching session status data...
+2025-12-15 23:49:57,657 - INFO - Data has been written to cache!
+2025-12-15 23:49:57,658 - INFO - No cached data found for lap_count. Loading data...
+2025-12-15 23:49:57,659 - INFO - Fetching lap count data...
+2025-12-15 23:49:58,188 - INFO - Data has been written to cache!
+2025-12-15 23:49:58,188 - INFO - No cached data found for track_status_data. Loading data...
+2025-12-15 23:49:58,188 - INFO - Fetching track status data...
+2025-12-15 23:49:58,704 - INFO - Data has been written to cache!
+2025-12-15 23:49:58,705 - INFO - No cached data found for _extended_timing_data. Loading data...
+2025-12-15 23:49:58,706 - INFO - Fetching timing data...
+2025-12-15 23:50:00,287 - INFO - Parsing timing data...
+2025-12-15 23:50:01,877 - INFO - Data has been written to cache!
+2025-12-15 23:50:01,877 - INFO - No cached data found for timing_app_data. Loading data...
+2025-12-15 23:50:01,877 - INFO - Fetching timing app data...
+2025-12-15 23:50:02,473 - INFO - Data has been written to cache!
+2025-12-15 23:50:02,473 - INFO - Processing timing data...
+2025-12-15 23:50:03,794 - INFO - No cached data found for car_data. Loading data...
+2025-12-15 23:50:03,794 - INFO - Fetching car data...
+2025-12-15 23:50:04,854 - INFO - Parsing car data...
+2025-12-15 23:50:08,977 - WARNING - Driver  2: Car data is incomplete!
+2025-12-15 23:50:08,993 - WARNING - Driver  3: Car data is incomplete!
+2025-12-15 23:50:09,020 - WARNING - Driver  5: Car data is incomplete!
+2025-12-15 23:50:09,066 - WARNING - Driver  6: Car data is incomplete!
+2025-12-15 23:50:09,105 - WARNING - Driver  7: Car data is incomplete!
+2025-12-15 23:50:09,133 - WARNING - Driver  8: Car data is incomplete!
+2025-12-15 23:50:09,155 - WARNING - Driver  9: Car data is incomplete!
+2025-12-15 23:50:09,192 - WARNING - Driver 12: Car data is incomplete!
+2025-12-15 23:50:09,225 - WARNING - Driver 15: Car data is incomplete!
+2025-12-15 23:50:09,271 - WARNING - Driver 17: Car data is incomplete!
+2025-12-15 23:50:09,305 - WARNING - Driver 19: Car data is incomplete!
+2025-12-15 23:50:09,332 - WARNING - Driver 21: Car data is incomplete!
+2025-12-15 23:50:09,373 - WARNING - Driver 25: Car data is incomplete!
+2025-12-15 23:50:09,405 - WARNING - Driver 26: Car data is incomplete!
+2025-12-15 23:50:09,432 - WARNING - Driver 28: Car data is incomplete!
+2025-12-15 23:50:09,463 - WARNING - Driver 29: Car data is incomplete!
+2025-12-15 23:50:09,496 - WARNING - Driver 31: Car data is incomplete!
+2025-12-15 23:50:09,511 - WARNING - Driver 43: Car data is incomplete!
+2025-12-15 23:50:09,539 - WARNING - Driver 44: Car data is incomplete!
+2025-12-15 23:50:09,568 - WARNING - Driver 55: Car data is incomplete!
+2025-12-15 23:50:09,604 - WARNING - Driver 61: Car data is incomplete!
+2025-12-15 23:50:09,637 - WARNING - Driver 63: Car data is incomplete!
+2025-12-15 23:50:09,668 - WARNING - Driver 77: Car data is incomplete!
+2025-12-15 23:50:09,689 - WARNING - Driver 81: Car data is incomplete!
+2025-12-15 23:50:09,844 - INFO - Data has been written to cache!
+2025-12-15 23:50:09,844 - INFO - No cached data found for position_data. Loading data...
+2025-12-15 23:50:09,844 - INFO - Fetching position data...
+2025-12-15 23:50:11,025 - INFO - Parsing position data...
+2025-12-15 23:50:15,345 - WARNING - Driver  2: Position data is incomplete!
+2025-12-15 23:50:15,362 - WARNING - Driver  3: Position data is incomplete!
+2025-12-15 23:50:15,383 - WARNING - Driver  5: Position data is incomplete!
+2025-12-15 23:50:15,424 - WARNING - Driver  6: Position data is incomplete!
+2025-12-15 23:50:15,463 - WARNING - Driver  7: Position data is incomplete!
+2025-12-15 23:50:15,489 - WARNING - Driver  8: Position data is incomplete!
+2025-12-15 23:50:15,522 - WARNING - Driver  9: Position data is incomplete!
+2025-12-15 23:50:15,553 - WARNING - Driver 12: Position data is incomplete!
+2025-12-15 23:50:15,575 - WARNING - Driver 15: Position data is incomplete!
+2025-12-15 23:50:15,606 - WARNING - Driver 17: Position data is incomplete!
+2025-12-15 23:50:15,627 - WARNING - Driver 19: Position data is incomplete!
+2025-12-15 23:50:15,648 - WARNING - Driver 21: Position data is incomplete!
+2025-12-15 23:50:15,668 - WARNING - Driver 25: Position data is incomplete!
+2025-12-15 23:50:15,689 - WARNING - Driver 26: Position data is incomplete!
+2025-12-15 23:50:15,717 - WARNING - Driver 28: Position data is incomplete!
+2025-12-15 23:50:15,733 - WARNING - Driver 29: Position data is incomplete!
+2025-12-15 23:50:15,772 - WARNING - Driver 30: Position data is incomplete!
+2025-12-15 23:50:15,805 - WARNING - Driver 31: Position data is incomplete!
+2025-12-15 23:50:15,861 - WARNING - Driver 43: Position data is incomplete!
+2025-12-15 23:50:15,905 - WARNING - Driver 44: Position data is incomplete!
+2025-12-15 23:50:15,934 - WARNING - Driver 55: Position data is incomplete!
+2025-12-15 23:50:15,978 - WARNING - Driver 61: Position data is incomplete!
+2025-12-15 23:50:16,025 - WARNING - Driver 63: Position data is incomplete!
+2025-12-15 23:50:16,066 - WARNING - Driver 77: Position data is incomplete!
+2025-12-15 23:50:16,100 - WARNING - Driver 81: Position data is incomplete!
+2025-12-15 23:50:16,792 - INFO - Data has been written to cache!
+2025-12-15 23:50:18,791 - INFO - No cached data found for weather_data. Loading data...
+2025-12-15 23:50:18,791 - INFO - Fetching weather data...
+2025-12-15 23:50:19,335 - INFO - Data has been written to cache!
+2025-12-15 23:50:19,337 - INFO - No cached data found for race_control_messages. Loading data...
+2025-12-15 23:50:19,338 - INFO - Fetching race control messages...
+2025-12-15 23:50:19,861 - INFO - Data has been written to cache!
+2025-12-15 23:50:20,007 - INFO - Finished loading data for 20 drivers: ['4', '55', '16', '44', '63', '1', '10', '27', '14', '81', '23', '22', '24', '18', '61', '20', '30', '77', '43', '11']
+2025-12-15 23:50:20,021 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/laps/season%3D2024/round%3D24/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '107179'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'd075d8f5-da10-11f0-b9f2-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:50:20,593 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:50:20 GMT'
+    'ETag': '"0x8DE3C34B53DE838"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '2f4f2167-301e-0056-6f1d-6eaee2000000'
+    'x-ms-client-request-id': 'd075d8f5-da10-11f0-b9f2-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:50:20 GMT'
+2025-12-15 23:50:20,596 - INFO - LAPS ingested | rows=1035
+2025-12-15 23:50:20,596 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/weather/season%3D2024/round%3D24/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '10283'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'd0cdd000-da10-11f0-a023-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:50:21,144 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:50:21 GMT'
+    'ETag': '"0x8DE3C34B59344A8"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'f8a9473e-201e-0091-791d-6e3abf000000'
+    'x-ms-client-request-id': 'd0cdd000-da10-11f0-a023-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:50:21 GMT'
+2025-12-15 23:50:21,144 - INFO - WEATHER ingested | rows=148
+2025-12-15 23:50:21,160 - INFO - Request URL: 'https://f1pipelinestorageaccount.blob.core.windows.net/bronze/results/season%3D2024/round%3D24/session%3DR/data.parquet'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '18028'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.12.3 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'd123d89b-da10-11f0-ada9-c8b29b5bad3c'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2025-12-15 23:50:21,698 - INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 15 Dec 2025 23:50:22 GMT'
+    'ETag': '"0x8DE3C34B5E6C390"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '7f05c332-c01e-007d-071d-6e2e2e000000'
+    'x-ms-client-request-id': 'd123d89b-da10-11f0-ada9-c8b29b5bad3c'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 15 Dec 2025 23:50:21 GMT'
+2025-12-15 23:50:21,699 - INFO - RESULTS ingested | rows=20
+2025-12-15 23:50:21,700 - INFO - SUCCESS | Season=2024, Round=24, Session=R

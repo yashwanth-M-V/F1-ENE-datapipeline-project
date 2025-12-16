@@ -2,3 +2,9 @@
 *.pem
 *.key
 *.crt
+*.yaml
+*.yml
+config/config.yaml
+fastf1_cache/
+*.ff1pkl
+*.sqlite
