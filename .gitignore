@@ -8,3 +8,13 @@ config/config.yaml
 fastf1_cache/
 *.ff1pkl
 *.sqlite
+f1-dp-ml/
+
+# Python virtual environment
+venv/
+.env/
+__pycache__/
+
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
