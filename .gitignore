@@ -1,20 +1,55 @@
-*.txt
-*.pem
-*.key
-*.crt
-*.yaml
-*.yml
-config/config.yaml
-fastf1_cache/
-*.ff1pkl
-*.sqlite
+# =====================
+# Python
+# =====================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+
+# =====================
+# Virtual environments
+# =====================
+.venv/
+venv/
+env/
 f1-dp-ml/
 
-# Python virtual environment
-venv/
-.env/
-__pycache__/
+# =====================
+# Environment & secrets
+# =====================
+.env
+.env.*
+*.key
 
+# =====================
+# Local data (derived)
+# =====================
+data/bronze/
+data/silver/
+data/gold/
 
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
+# =====================
+# FastF1 cache
+# =====================
+fastf1_cache/
+
+# =====================
+# OS / Editor
+# =====================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# =====================
+# Logs
+# =====================
+*.log
+logs/
+
+# =====================
+# Temporary files
+# =====================
+tmp/
+*.tmp
