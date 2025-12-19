@@ -20,7 +20,7 @@ The goal is to showcase **data engineering skills**, **cloud architecture**, and
 
 ---
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 ```
 
