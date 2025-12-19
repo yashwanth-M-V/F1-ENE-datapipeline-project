@@ -24,6 +24,8 @@ f1-dp-ml/
 *.key
 **/.env
 **/.env.*
+.env
+data/scripts/.env
 
 # =====================
 # Local data (derived)
