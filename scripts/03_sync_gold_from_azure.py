@@ -63,6 +63,7 @@ if __name__ == "__main__":
         download_gold_table("gold_race_laps", "gold_laps")
         download_gold_table("gold_race_weather", "gold_weather")
         download_gold_table("gold_race_results", "gold_results")
+        download_gold_table("gold_drivers", "gold_drivers")
         print("🎉 Gold sync completed successfully")
     except Exception as e:
         print("❌ Azure sync failed. Using local cache only.")
