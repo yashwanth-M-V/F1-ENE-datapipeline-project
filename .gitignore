@@ -20,7 +20,10 @@ f1-dp-ml/
 # =====================
 .env
 .env.*
+*.env
 *.key
+**/.env
+**/.env.*
 
 # =====================
 # Local data (derived)
